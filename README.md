@@ -1,36 +1,36 @@
-# RLEMS Airport: Forecast-aware renewable-hydrogen microgrid energy management
+# Forecast Uncertainty-Aware MPC for Renewable Hydrogen Production in Airport Microgrids
 
-This repository contains the frozen reproducibility package for the airport microgrid study evaluating causal multi-horizon forecasting, rule-based control, 24 h MPC, ExtraTrees-MPC, and Hybrid GFS-MPC for direct-renewable hydrogen production.
+This repository contains the frozen reproducibility package for an airport microgrid study evaluating causal multi-horizon forecasting and four energy-management strategies: Rule-Based EMS, Causal MPC, ExtraTrees-MPC-24h, and Hybrid GFS-MPC-72h for direct-renewable hydrogen production.
 
 The repository is intentionally smaller than the original development archive. Historical debugging scripts, superseded model versions, duplicate ZIP packages, and very large raw solver-audit tables are not treated as authoritative manuscript artifacts.
 
 ## Repository layout
 
 ```text
-RLEMS_airport_REPRO/
-├── README.md
-├── REPRODUCIBILITY_NOTES.md
-├── environment.yml
-├── requirements.txt
-├── .gitignore
-├── code/
-│   ├── simulation/
-│   ├── postprocessing/
-│   └── figures/
-├── data/
-│   ├── input/
-│   └── forecast_cache/
-├── results/
-│   ├── reference/
-│   ├── stress/
-│   ├── pem_sensitivity/
-│   ├── source_data/
-│   └── figures/
-├── validation/
-│   ├── provenance/
-│   └── checks/
-├── supplementary/
-└── docs/
+Airport-GreenH2-Forecast-MPC/
+â”œâ”€â”€ README.md
+â”œâ”€â”€ REPRODUCIBILITY_NOTES.md
+â”œâ”€â”€ environment.yml
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ .gitignore
+â”œâ”€â”€ code/
+â”‚   â”œâ”€â”€ simulation/
+â”‚   â”œâ”€â”€ postprocessing/
+â”‚   â””â”€â”€ figures/
+â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ input/
+â”‚   â””â”€â”€ forecast_cache/
+â”œâ”€â”€ results/
+â”‚   â”œâ”€â”€ reference/
+â”‚   â”œâ”€â”€ stress/
+â”‚   â”œâ”€â”€ pem_sensitivity/
+â”‚   â”œâ”€â”€ source_data/
+â”‚   â””â”€â”€ figures/
+â”œâ”€â”€ validation/
+â”‚   â”œâ”€â”€ provenance/
+â”‚   â””â”€â”€ checks/
+â”œâ”€â”€ supplementary/
+â””â”€â”€ docs/
 ```
 
 ## Authoritative model and data
@@ -51,6 +51,11 @@ SHA256:
 
 `5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd`
 
+> **Filename provenance.** Some frozen scientific filenames retain the historical RLEMS prefix so that the verified source file and its SHA256 hash remain unchanged. Reinforcement learning is not part of the final manuscript controller comparison.
+
+## Verified reproduction status
+
+The package was independently rerun from a clean Conda environment before repository release. The 73-day held-out reference simulation completed with **Scientific checks: PASS** and **Solver gate: PASS**. The three principal reference summary files reproduced exactly, with a maximum absolute numerical difference of **0** relative to the frozen manuscript results. Manuscript Figures 3-9 were also regenerated and verified at **900 dpi**.
 ## Environment
 
 The principal publication run recorded Python 3.10.20 with NumPy 2.0.1, pandas 2.3.3, SciPy 1.15.3, Matplotlib 3.10.9, openpyxl 3.1.5 and scikit-learn 1.7.2.
@@ -62,7 +67,7 @@ conda env create -f environment.yml
 conda activate rlems_airport_repro
 ```
 
-The supplied frozen GFS cache is sufficient for the standard reproduction workflow. Native ecCodes support is only needed if fresh GRIB acquisition is intentionally performed.
+The supplied frozen GFS cache avoids reacquiring NOAA GRIB files. However, the frozen reference and full publication workflows still execute an ecCodes preflight; therefore eccodes and python-eccodes are included in environment.yml and are required for these modes.
 
 ## Quick integrity check
 

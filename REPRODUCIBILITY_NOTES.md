@@ -28,7 +28,7 @@ The PEM-consistency runner intentionally validates the frozen scientific contrac
 
 ## Forecast data
 
-The repository includes the frozen issued-GFS cache used by the controller. This allows offline reproduction without reacquiring NOAA GRIB files. Fresh GFS acquisition is therefore optional and is not required for the standard reviewer workflow.
+The repository includes the frozen issued-GFS cache used by the controller, so NOAA GRIB files do not need to be reacquired for standard reproduction. The frozen reference/full workflow nevertheless performs an ecCodes runtime preflight; consequently, eccodes and python-eccodes are included in the supplied Conda environment.
 
 ## Results policy
 
