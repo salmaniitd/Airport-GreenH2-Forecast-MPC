@@ -8,31 +8,28 @@ The repository is intentionally smaller than the original development archive. H
 
 ```text
 Airport-GreenH2-Forecast-MPC/
-â”œâ”€â”€ README.md
-â”œâ”€â”€ REPRODUCIBILITY_NOTES.md
-â”œâ”€â”€ environment.yml
-â”œâ”€â”€ requirements.txt
-â”œâ”€â”€ .gitignore
-â”œâ”€â”€ code/
-â”‚   â”œâ”€â”€ simulation/
-â”‚   â”œâ”€â”€ postprocessing/
-â”‚   â””â”€â”€ figures/
-â”œâ”€â”€ data/
-â”‚   â”œâ”€â”€ input/
-â”‚   â””â”€â”€ forecast_cache/
-â”œâ”€â”€ results/
-â”‚   â”œâ”€â”€ reference/
-â”‚   â”œâ”€â”€ stress/
-â”‚   â”œâ”€â”€ pem_sensitivity/
-â”‚   â”œâ”€â”€ source_data/
-â”‚   â””â”€â”€ figures/
-â”œâ”€â”€ validation/
-â”‚   â”œâ”€â”€ provenance/
-â”‚   â””â”€â”€ checks/
-â”œâ”€â”€ supplementary/
-â””â”€â”€ docs/
+|-- README.md
+|-- REPRODUCIBILITY_NOTES.md
+|-- environment.yml
+|-- requirements.txt
+|-- .gitignore
+|-- code/
+|   |-- simulation/
+|   |-- postprocessing/
+|   `-- figures/
+|-- data/
+|   |-- input/
+|   `-- forecast_cache/
+|-- results/
+|   |-- reference/
+|   |-- stress/
+|   |-- pem_sensitivity/
+|   |-- source_data/
+|   `-- figures/
+`-- validation/
+    |-- provenance/
+    `-- checks/
 ```
-
 ## Authoritative model and data
 
 Frozen core:
