@@ -1,0 +1,13 @@
+stress_test,controller,grid_scenario,grid_import_cap_kw,h2_demand_rate_kg_day,solver_decisions,optimal_decisions,feasible_unknown_accepted,solver_retries,mean_solve_time_ms,p95_solve_time_ms,max_solve_time_ms,publication_solver_gate,case_status,failure_type,failure_message,case_runtime_sec
+stress_2_grid,Rule-Based EMS,limited_export,12000.0,460.0,0.0,0.0,0.0,0.0,,,,True,PASS,,,
+stress_2_grid,Causal MPC,limited_export,12000.0,460.0,7008.0,7008.0,0.0,0.0,8.649949001195653,9.65846499020699,137.1802000212483,True,PASS,,,
+stress_2_grid,ExtraTrees-MPC-24h,limited_export,12000.0,460.0,7008.0,7008.0,0.0,0.0,9.847105707614162,11.078629977419041,26.30719996523112,True,PASS,,,
+stress_2_grid,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,12000.0,460.0,7008.0,7008.0,0.0,0.0,14.546976626462149,17.154255023342557,29.26030004164204,True,PASS,,,
+stress_2_grid,Rule-Based EMS,limited_export,10000.0,460.0,0.0,0.0,0.0,0.0,,,,True,PASS,,,
+stress_2_grid,Causal MPC,limited_export,10000.0,460.0,7008.0,7008.0,0.0,0.0,8.643874814671735,9.709785011364145,15.590999973937869,True,PASS,,,
+stress_2_grid,ExtraTrees-MPC-24h,limited_export,10000.0,460.0,7008.0,7008.0,0.0,0.0,9.842534217763943,11.04032997682225,14.80860001174733,True,PASS,,,
+stress_2_grid,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,10000.0,460.0,7008.0,7008.0,0.0,0.0,14.546516823757639,17.14585497975349,29.681599989999086,True,PASS,,,
+stress_2_grid,Rule-Based EMS,limited_export,8000.0,460.0,0.0,0.0,0.0,0.0,,,,True,PASS,,,
+stress_2_grid,Causal MPC,limited_export,8000.0,460.0,,,,,,,,,FAILED,RuntimeError,MPC decision failed at step_index=16497: HiGHS MPC failed after all recovery attempts. highs-ds/presolve=True: status=2; The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None); highs-ds/presolve=False: status=2; The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is Infeasible); highs-ipm/presolve=False: status=2; The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is Infeasible); highs/presolve=True: status=2; The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None),57.83733900001971
+stress_2_grid,ExtraTrees-MPC-24h,limited_export,8000.0,460.0,7008.0,7008.0,0.0,0.0,9.759297502664614,10.95980998361483,16.416999977082014,True,PASS,,,
+stress_2_grid,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,8000.0,460.0,7008.0,7008.0,0.0,0.0,14.288531107071254,16.87809501599986,27.472599991597235,True,PASS,,,

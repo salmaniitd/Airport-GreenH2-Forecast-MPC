@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-08-26T02:28:04.917873+00:00",
+  "runner_version": "TARGETED_PEM_CONSISTENT_SIZE_1.5.0",
+  "frozen_core": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\python_modelling_7\\RLEMS_Airport_GreenH2_ECM_HybridGFS72_Publication_v1_6_5_CLEAN_RUNTIME_FIX.py",
+  "frozen_core_version": "ECM_FINAL_1.6.5_5MIN_HYBRID_GFS72_CLEAN_RUNTIME_FIX",
+  "frozen_core_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "historical_expected_core_sha256": "d37f33a59220fc35eca6d913ef9bf9b736c5acfdba9bc475b10cdac781a46349",
+  "frozen_core_modified_on_disk": false,
+  "evaluation_period": "Final_Test_Data full chronological 73-day held-out period",
+  "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+  "pem_sizes_kw": [
+    3000.0,
+    3500.0,
+    4000.0,
+    4500.0,
+    5000.0
+  ],
+  "h2_demand_kg_day": 425.0,
+  "grid_scenario": "base_export",
+  "input_hash_audit": {
+    "label": "Corpus workbook",
+    "path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\python_modelling_7\\KotaBharu_Airport_Master_5min_2024_2025_SCRIPT_READY.xlsx",
+    "sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+    "expected_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+    "matched": true
+  },
+  "pem_model": {
+    "minimum_load_fraction": 0.1,
+    "ramp_up_fraction_per_second": 0.1,
+    "ramp_down_fraction_per_second": 0.4,
+    "sec_load_fractions": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "sec_kwh_per_kg": [
+      58.5,
+      54.0,
+      52.5,
+      53.5,
+      55.0
+    ],
+    "planning_method": "successive linearisation of the unchanged LP around the first receding-horizon PEM action",
+    "planning_execution_consistency": "same part-load SEC used in the LP local linearisation and 5-min plant transition",
+    "minimum_loading_treatment": "transparent first-action/physical projection; projection frequency and magnitude are reported",
+    "ramp_treatment": "first-action/physical projection at the stated rates; expected to be non-binding at 5-min resolution and audited",
+    "assumption_status": "literature-informed bounded sensitivity; not manufacturer-calibrated"
+  },
+  "scientific_locks": {
+    "ExtraTrees_retuned": false,
+    "GFS_calibration_retuned": false,
+    "GFS_weights_retuned": false,
+    "GFS_availability_delay_changed": false,
+    "UQ_method_changed": false,
+    "MPC_objective_retuned": false,
+    "green_H2_threshold_changed": false,
+    "direct_PV_accounting_definition_changed": false,
+    "battery_model_changed": false,
+    "tariff_changed": false,
+    "HiGHS_solver_changed": false
+  },
+  "scope_note": "Targeted reviewer-response robustness/sizing experiment. It does not replace or rerun the complete manuscript campaign."
+}

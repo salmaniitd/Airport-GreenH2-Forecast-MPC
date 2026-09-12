@@ -1,0 +1,5 @@
+stress_test,controller,grid_scenario,grid_import_cap_kw,h2_demand_rate_kg_day,solver_decisions,optimal_decisions,feasible_unknown_accepted,solver_retries,mean_solve_time_ms,p95_solve_time_ms,max_solve_time_ms,publication_solver_gate,case_status
+stress_1_weather,Rule-Based EMS,limited_export,20000.0,460.0,0,0,0,0,,,,True,PASS
+stress_1_weather,Causal MPC,limited_export,20000.0,460.0,7008,7008,0,0,8.260163141309336,9.13146497332491,12.427799985744059,True,PASS
+stress_1_weather,ExtraTrees-MPC-24h,limited_export,20000.0,460.0,7008,7008,0,0,9.972832748108848,11.581700024544261,24.019500007852912,True,PASS
+stress_1_weather,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,460.0,7008,7008,0,0,15.180418279059056,18.328095015021972,30.591199989430606,True,PASS

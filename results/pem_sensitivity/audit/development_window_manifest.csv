@@ -1,0 +1,3 @@
+evaluation_window,rows,days,timestamp_start,timestamp_end,state_resets_inside_window
+Development_A,21024,73.0,2025-05-27,2025-08-07 23:55:00,0
+Development_B,21024,73.0,2025-08-08,2025-10-19 23:55:00,0

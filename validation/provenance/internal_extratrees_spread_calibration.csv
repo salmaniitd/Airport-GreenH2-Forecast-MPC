@@ -1,0 +1,6 @@
+target,horizon_hours,sample_count_all,sample_count_active,spread_reference_kw,calibration_supported,reference_quantile,active_surplus_threshold_kw,calibration_partition,future_actual_values_used,development_data_used,zero_or_night_surplus_excluded
+direct_pv_surplus_kw,1,511,0,,False,0.9,100.0,Training_Data only,False,False,True
+direct_pv_surplus_kw,3,511,0,,False,0.9,100.0,Training_Data only,False,False,True
+direct_pv_surplus_kw,6,511,0,,False,0.9,100.0,Training_Data only,False,False,True
+direct_pv_surplus_kw,12,511,509,962.8036136556922,True,0.9,100.0,Training_Data only,False,False,True
+direct_pv_surplus_kw,24,511,0,,False,0.9,100.0,Training_Data only,False,False,True

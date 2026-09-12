@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# IDE / OS
+.spyproject/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Office temporary files
+~$*
+
+# Temporary / local logs
+*.log
+*.tmp
+*.bak
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Generated reruns: frozen manuscript results remain tracked under results/
+results/reproduction/
+
+# Large raw solver audits are intentionally excluded from the review repository
+**/broad_sensitivity_solver_audit.csv
+**/refined_boundary_solver_audit.csv
+**/reference_final_test_solver_audit.csv
+
+# Local archive packages
+*.zip
+*.pyc
+.ipynb_checkpoints/

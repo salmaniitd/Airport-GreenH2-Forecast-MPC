@@ -1,0 +1,20 @@
+{
+  "version": "ECM_FINAL_1.6.5_5MIN_HYBRID_GFS72_CLEAN_RUNTIME_FIX",
+  "mode": "publication",
+  "completed_utc": "2026-08-17T00:32:03.398733+00:00",
+  "reference_pem_kw": 4000.0,
+  "sensitivity_pem_kw": 3500.0,
+  "reference_h2_demand_kg_day": 425.0,
+  "reference_case_root": "pem_4p0mw",
+  "sensitivity_case_root": "pem_3p5mw",
+  "full_3p5mw_sensitivity": false,
+  "reference_4p0mw_passed": true,
+  "sensitivity_3p5mw_solver_and_scientific_checks_passed": true,
+  "scientific_checks_passed": true,
+  "solver_gate_passed": true,
+  "solver_gate_status": "PASS",
+  "combined_figures_generated": 20,
+  "core_4p0mw_figures_available": 8,
+  "publication_ready_run": true,
+  "scientific_interpretation": "The 4.0 MW branch is the manuscript reference configuration. The 3.5 MW branch is a matched PEM-sizing sensitivity, not a replacement reference. Feasibility remains campaign-specific and must satisfy hydrogen service, direct-renewable H2 threshold, terminal states, component limits, and solver optimality."
+}

@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-08-17T03:14:46.149390+00:00",
+  "core_version": "ECM_FINAL_1.6.5_5MIN_HYBRID_GFS72_CLEAN_RUNTIME_FIX",
+  "core_script": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\python_modelling_7\\RLEMS_Airport_GreenH2_ECM_HybridGFS72_Publication_v1_6_5_CLEAN_RUNTIME_FIX.py",
+  "core_script_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "corpus": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\python_modelling_7\\KotaBharu_Airport_Master_5min_2024_2025_SCRIPT_READY.xlsx",
+  "corpus_hash_audit": {
+    "label": "Corpus workbook",
+    "path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\python_modelling_7\\KotaBharu_Airport_Master_5min_2024_2025_SCRIPT_READY.xlsx",
+    "sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+    "expected_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+    "matched": true
+  },
+  "evaluation_period": "Final_Test_Data full chronological 73-day period",
+  "event_threshold_partition": "Development_Confirm only",
+  "controllers": [
+    "Rule-Based EMS",
+    "Causal MPC",
+    "ExtraTrees-MPC-24h",
+    "Hybrid-GFS-UQ-MT-MPC-72h-TV"
+  ],
+  "stress_test_1": {
+    "name": "weather_stress",
+    "h2_demand_kg_day": 460.0,
+    "h2_initial_kg": 460.0,
+    "h2_terminal_min_kg": 460.0,
+    "h2_reserve_hours": 12.0,
+    "export_cap_kw": 3000.0,
+    "grid_import_cap_kw": 20000.0
+  },
+  "stress_test_2": {
+    "name": "weather_plus_grid_stress",
+    "same_weather_h2_conditions_as_test_1": true,
+    "grid_import_caps_kw": [
+      20000.0,
+      12000.0,
+      10000.0,
+      8000.0
+    ],
+    "note": "20 MW baseline is reused from Test 1; 12/10/8 MW are newly solved."
+  },
+  "stress_test_3": {
+    "name": "renewable_h2_boundary",
+    "h2_demands_kg_day": [
+      450.0,
+      460.0,
+      465.0,
+      468.0,
+      469.0,
+      470.0,
+      475.0,
+      500.0
+    ],
+    "grid_import_cap_kw": 20000.0,
+    "export_cap_kw": 3000.0
+  },
+  "scientific_locks": {
+    "forecast_calibration_retuned": false,
+    "gfs_beta_retuned": false,
+    "uq_retuned": false,
+    "mpc_objective_retuned": false,
+    "tariff_changed": false,
+    "battery_degradation_cost_changed": false,
+    "green_h2_threshold_changed": false,
+    "direct_pv_h2_accounting_changed": false,
+    "solver_changed": false
+  },
+  "interpretation_note": "This is a targeted post-publication stress analysis using the frozen controller/forecast architecture. It is not a new model-selection or hyperparameter-tuning stage."
+}

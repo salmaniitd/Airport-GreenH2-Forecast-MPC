@@ -1,0 +1,2 @@
+selection_id,training_days,timestamp_start,timestamp_end,source,random_subsampling
+all_training_days,512,2024-01-01,2025-05-26 23:55:00,chronological_2024_2025_training_partition_5min,False

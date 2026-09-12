@@ -1,0 +1,16 @@
+﻿name: rlems_airport_repro
+channels:
+  - defaults
+dependencies:
+  - scikit-learn=1.7.2
+  - pandas=2.3.3
+  - pip
+  - scipy=1.15.3
+  - matplotlib=3.10.9
+  - python=3.10.20
+  - requests[version='>=2.31,<3']
+  - openpyxl=3.1.5
+  - numpy=2.0.1
+  - pillow[version='>=10']
+  - eccodes
+  - python-eccodes

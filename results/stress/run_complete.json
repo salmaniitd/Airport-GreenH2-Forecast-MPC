@@ -1,0 +1,22 @@
+{
+  "completed_utc": "2026-08-17T10:17:45.801293+00:00",
+  "mode": "stress-all",
+  "core_version": "ECM_FINAL_1.6.5_5MIN_HYBRID_GFS72_CLEAN_RUNTIME_FIX",
+  "three_test_sequence": [
+    "weather_stress",
+    "weather_plus_grid_stress",
+    "renewable_h2_boundary"
+  ],
+  "stress_tests_completed": {
+    "weather": true,
+    "grid": true,
+    "boundary": true
+  },
+  "passed_case_count": 47,
+  "failed_case_count": 1,
+  "event_count": 15,
+  "scientific_checks_passed": true,
+  "forecast_or_controller_retuned": false,
+  "publication_core_modified": false,
+  "overall_status": "COMPLETED_WITH_CASE_FAILURES"
+}

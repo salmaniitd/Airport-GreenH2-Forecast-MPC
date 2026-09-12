@@ -1,0 +1,5 @@
+controller,maximum_tested_green_compliant_h2_demand_kg_day,first_tested_noncompliant_h2_demand_kg_day
+Rule-Based EMS,460.0,465.0
+Causal MPC,460.0,465.0
+ExtraTrees-MPC-24h,,450.0
+Hybrid-GFS-UQ-MT-MPC-72h-TV,,450.0

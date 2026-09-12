@@ -1,0 +1,9 @@
+pem_cap_kw,maximum_direct_pv_h2_kg,required_net_h2_production_kg,optimistic_green_h2_fraction_bound,green_h2_target,target_resource_feasible,interpretation,h2_demand_rate_kg_day,evaluation_period
+4000.0,23981.292017,32850.0,0.7300241101065449,0.7,True,"necessary resource bound, not dynamic feasibility proof",450.0,Final_Test
+4000.0,23981.292017,33580.0,0.7141540207564027,0.7,True,"necessary resource bound, not dynamic feasibility proof",460.0,Final_Test
+4000.0,23981.292017,33945.0,0.7064749452643982,0.7,True,"necessary resource bound, not dynamic feasibility proof",465.0,Final_Test
+4000.0,23981.292017,34164.0,0.7019462597178316,0.7,True,"necessary resource bound, not dynamic feasibility proof",468.0,Final_Test
+4000.0,23981.292017,34237.0,0.7004495725968981,0.7,True,"necessary resource bound, not dynamic feasibility proof",469.0,Final_Test
+4000.0,23981.292017,34310.0,0.6989592543573302,0.7,False,"necessary resource bound, not dynamic feasibility proof",470.0,Final_Test
+4000.0,23981.292017,34675.0,0.69160178852199,0.7,False,"necessary resource bound, not dynamic feasibility proof",475.0,Final_Test
+4000.0,23981.292017,36500.0,0.6570216990958904,0.7,False,"necessary resource bound, not dynamic feasibility proof",500.0,Final_Test

@@ -1,0 +1,9 @@
+{
+  "development_transition_p20_mwh_per_day": -10.868864319999993,
+  "development_transition_p80_mwh_per_day": 13.019535000000005,
+  "scarcity_quantile": 0.2,
+  "recovery_quantile": 0.8,
+  "selection_period": "Development_Confirm",
+  "evaluation_period": "Final_Test",
+  "overlap_policy": "chronological non-overlapping 72-h windows"
+}

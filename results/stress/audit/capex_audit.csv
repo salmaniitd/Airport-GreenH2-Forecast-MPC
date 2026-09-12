@@ -1,0 +1,10 @@
+component,capex_usd
+PV array,9960000.0
+PV inverter,840000.0
+BESS energy block,1125000.0
+BESS PCS,225000.0
+PEM stack,2800000.0
+PEM rectifier,400000.0
+H2 tank,600000.0
+H2 balance of plant,760000.0
+Total split CAPEX,16710000.0

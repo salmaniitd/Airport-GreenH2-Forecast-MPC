@@ -1,0 +1,26 @@
+{
+  "completed_utc": "2026-08-26T04:44:33.522098+00:00",
+  "runner_version": "TARGETED_PEM_CONSISTENT_SIZE_1.5.0",
+  "frozen_core_version": "ECM_FINAL_1.6.5_5MIN_HYBRID_GFS72_CLEAN_RUNTIME_FIX",
+  "frozen_core_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "frozen_core_modified_on_disk": false,
+  "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+  "pem_sizes_mw": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0
+  ],
+  "dynamic_pass_cases": 5,
+  "infeasible_cases": 0,
+  "unexpected_failed_cases": 0,
+  "nominal_anchor_cases_completed": 1,
+  "successful_case_physics_and_solver_checks_passed": false,
+  "overall_status": "CHECK_REQUIRED",
+  "full_publication_rerun_performed": false,
+  "GFS_cache_reused": true,
+  "forecast_retuned": false,
+  "MPC_objective_retuned": false,
+  "PEM_planning_execution_consistency_enabled": true
+}

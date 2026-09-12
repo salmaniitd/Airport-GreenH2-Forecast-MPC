@@ -1,0 +1,33 @@
+stress_test,controller,grid_scenario,grid_import_cap_kw,h2_demand_rate_kg_day,solver_decisions,optimal_decisions,feasible_unknown_accepted,solver_retries,mean_solve_time_ms,p95_solve_time_ms,max_solve_time_ms,publication_solver_gate,case_status
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,450.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,450.0,7008,7008,0,0,8.734440425051787,10.15708998311311,109.77889999048784,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,450.0,7008,7008,0,0,9.741868179454082,10.898284980794413,17.405700054951012,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,450.0,7008,7008,0,0,14.469676955172353,17.1863850147929,32.42339997086674,True,PASS
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,460.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,460.0,7008,7008,0,0,8.725678795807026,9.663555008592084,17.098699987400323,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,460.0,7008,7008,0,0,9.784769206800533,10.997409999254158,16.95250003831461,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,460.0,7008,7008,0,0,14.518897216700292,17.06781498505734,25.26729996316135,True,PASS
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,465.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,465.0,7008,7008,0,0,8.551800985382108,9.683344984659925,16.948699951171875,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,465.0,7008,7008,0,0,9.763651955267441,10.968224989483133,18.633299972862005,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,465.0,7008,7008,0,0,14.692345919185804,17.3027549899416,27.17119996668771,True,PASS
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,468.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,468.0,7008,7008,0,0,9.042356435289449,13.973124994663522,117.54900001687929,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,468.0,7008,7008,0,0,9.89712611234729,11.487654986558482,16.652099962811917,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,468.0,7008,7008,0,0,14.488760673540131,17.351704993052408,27.210199972614646,True,PASS
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,469.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,469.0,7008,7008,0,0,8.905953139788444,13.507249980466437,19.14839999517426,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,469.0,7008,7008,0,0,9.73845804816502,11.41711997333914,17.889300012029707,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,469.0,7008,7008,0,0,14.444603852530133,17.177565005840734,27.626399998553097,True,PASS
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,470.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,470.0,7008,7008,0,0,8.77146436935672,12.607580015901476,43.15609997138381,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,470.0,7008,7008,0,0,9.734740710978278,11.41456499171909,16.72880002297461,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,470.0,7008,7008,0,0,14.986401926284895,17.808279997552745,29.929000011179596,True,PASS
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,475.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,475.0,7008,7008,0,0,9.429223130281816,14.379335002740842,126.43709999974817,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,475.0,7008,7008,0,0,9.855486130086797,11.631529996520838,15.810500015504658,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,475.0,7008,7008,0,0,14.893389626631189,17.543455018312667,29.243000026326627,True,PASS
+stress_3_boundary,Rule-Based EMS,limited_export,20000.0,500.0,0,0,0,0,,,,True,PASS
+stress_3_boundary,Causal MPC,limited_export,20000.0,500.0,7008,7008,0,0,8.655646604245405,9.844015043927357,19.388600019738078,True,PASS
+stress_3_boundary,ExtraTrees-MPC-24h,limited_export,20000.0,500.0,7008,7008,0,0,9.86976182914127,11.52382000873331,19.59689997602254,True,PASS
+stress_3_boundary,Hybrid-GFS-UQ-MT-MPC-72h-TV,limited_export,20000.0,500.0,7008,7008,0,0,14.759974386244357,17.40208498958964,27.46010001283139,True,PASS
