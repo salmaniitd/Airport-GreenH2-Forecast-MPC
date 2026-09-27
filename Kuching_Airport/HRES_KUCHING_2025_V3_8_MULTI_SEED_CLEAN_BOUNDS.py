@@ -4619,13 +4619,19 @@ def main():
     print(f'Architectures   : {configs}')
     print(f'PV cap          : {base_ub[0]/1000:.3f} MW')
     print(f'H2 levels       : {h2_levels if args.study in ("h2-sensitivity","complete") else [args.h2_demand_kg_day]} kg/day')
-    grid_active=(args.study=='grid-sensitivity' or (args.study=='complete' and args.include_grid_sensitivity_in_complete))
-    print(f'Grid sensitivity: {"ON (supplementary)" if grid_active else "OFF in main V3.8 workflow"}')
-    if grid_active:
-        print(f'Grid export caps: {grid_factors} x peak')
-    if args.mode=='full' and args.study=='complete':
-        unique_cases=len(h2_levels)+(max(0,len(grid_factors)-1) if args.include_grid_sensitivity_in_complete else 0)
-        print(f'WARNING: COMPLETE FULL requests {unique_cases*len(algorithms)*len(configs)} baseline/sensitivity optimizer runs plus PTS-2030 and MTS-2050 winner reruns.')
+    print('Grid sensitivity: OFF in the main V3.8 workflow')
+    if args.mode=='full':
+        baseline_runs=len(algorithms)*len(configs)*len(seed_list)
+        if args.study=='base':
+            estimated_runs=baseline_runs
+        elif args.study=='h2-sensitivity':
+            extra_h2=max(0,len(h2_levels)-1)*len(configs)*len(seed_list)
+            estimated_runs=baseline_runs+extra_h2
+        else:
+            extra_h2=max(0,len(h2_levels)-1)*len(configs)*len(seed_list)
+            future_runs=2*len(seed_list)
+            estimated_runs=baseline_runs+extra_h2+future_runs
+        print(f'Estimated optimizer runs: {estimated_runs}')
 
     # =============================================================================
     # V3.8 ROBUST SEQUENTIAL WORKFLOW
