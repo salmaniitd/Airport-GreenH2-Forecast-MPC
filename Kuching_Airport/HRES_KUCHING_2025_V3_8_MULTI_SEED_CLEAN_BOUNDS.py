@@ -4056,12 +4056,15 @@ def _aggregate_multiseed_summary(seed_summary_df):
     comp=out[out['representative_solution'].eq('compromise')].copy()
     if not comp.empty and not bool(comp['feasible'].any()):
         best_rate=float(pd.to_numeric(comp['feasible_rate'],errors='coerce').max())
-        eligible=(
-            out['representative_solution'].eq('compromise')
-            & np.isclose(pd.to_numeric(out['feasible_rate'],errors='coerce'),best_rate)
-        )
-        out.loc[eligible,'feasible']=True
-        out.loc[eligible,'robust_feasibility_fallback']='highest feasible-run rate'
+        if best_rate > 0.0:
+            eligible=(
+                out['representative_solution'].eq('compromise')
+                & np.isclose(pd.to_numeric(out['feasible_rate'],errors='coerce'),best_rate)
+            )
+            out.loc[eligible,'feasible']=True
+            out.loc[eligible,'robust_feasibility_fallback']='highest positive feasible-run rate'
+        else:
+            out['robust_feasibility_fallback']='no feasible seed run'
     else:
         out['robust_feasibility_fallback']='not required'
     return out
@@ -4379,28 +4382,18 @@ def _run_future_winner_scenarios(args, parent_dir, winner, run, base_lb, base_ub
 
     for tech_case,folder,label in scenarios:
         fdir=Path(parent_dir)/folder
-        if getattr(args,'seed_scope','baseline')=='all':
-            res=_execute_v38_multiseed_case(
-                args,fdir,label.replace(' re-optimized winner','').replace('-','_'),
-                [algorithm],[winner_cfg],run,base_lb,base_ub,Load,Solar_irr,
-                timestamps,ambient_temp,grid_price_usd,args.h2_demand_kg_day,
-                args.grid_export_limit_factor,horizons,emission_factors,
-                tech_case=tech_case,run_mcdm=False,
-                seeds=_parse_seed_list(getattr(args,'seeds',''),getattr(args,'seed',101))
-            )
-        else:
-            old_seed=args.seed
-            args.seed=_parse_seed_list(getattr(args,'seeds',''),getattr(args,'seed',101))[0]
-            try:
-                res=_execute_v37_case(
-                    args,fdir,label.replace(' re-optimized winner','').replace('-','_'),
-                    [algorithm],[winner_cfg],run,base_lb,base_ub,Load,Solar_irr,
-                    timestamps,ambient_temp,grid_price_usd,args.h2_demand_kg_day,
-                    args.grid_export_limit_factor,horizons,emission_factors,
-                    tech_case=tech_case,run_mcdm=False
-                )
-            finally:
-                args.seed=old_seed
+
+        # Final V3.8 workflow: future scenarios always use all
+        # independent seeds for the selected baseline optimizer/architecture.
+        future_seeds=_parse_seed_list(args.seeds,args.seed)
+
+        res=_execute_v38_multiseed_case(
+            args,fdir,label.replace(' re-optimized winner','').replace('-','_'),
+            [algorithm],[winner_cfg],run,base_lb,base_ub,Load,Solar_irr,
+            timestamps,ambient_temp,grid_price_usd,args.h2_demand_kg_day,
+            args.grid_export_limit_factor,horizons,emission_factors,
+            tech_case=tech_case,run_mcdm=False,seeds=future_seeds
+        )
         results[tech_case]=res
         fut=_future_compromise_row(res)
         if fut is None:
@@ -4460,7 +4453,7 @@ def main():
     parser.add_argument('--data',default='Kuching_International_Airport_2025_HRES_Optimization_Ready.xlsx')
     parser.add_argument('--sheet',default='HRES_Input_8760')
     parser.add_argument('--mode',choices=['quick','pilot','full'],default='full')
-    parser.add_argument('--study',choices=['base','h2-sensitivity','grid-sensitivity','complete'],default='base')
+    parser.add_argument('--study',choices=['base','h2-sensitivity','complete'],default='base')
     parser.add_argument('--h2-demand-levels',default='250,500,750,1000')
     parser.add_argument('--grid-export-sensitivity-factors',default='0.50,0.25,0.0',
                         help='Optional supplementary grid-export caps as fractions of airport peak load. Import cap stays fixed.')
@@ -4469,7 +4462,17 @@ def main():
     parser.add_argument('--algorithms',default='all',help='all or comma-separated: PSO-GA,PSO-GWO,PSO-ABC')
     parser.add_argument('--bounds',choices=['clean','data','legacy'],default='clean')
     parser.add_argument('--config',default='all',choices=['all','PV-BT-EL-HT-FC','PV-BT-EL-HT','PV-EL-HT-FC','PV-EL-HT'])
-    parser.add_argument('--seed',type=int,default=101,help='Single-seed fallback / first seed.')\n    parser.add_argument('--seeds',default='101,202,303,404,505,606,707,808,909,1010',\n                        help='Comma-separated independent seeds for V3.8 robustness runs.')\n    parser.add_argument('--seed-scope',choices=['baseline','all'],default='baseline',\n                        help='baseline = 10 seeds for the 500 kg/day baseline only; all = 10 seeds for every optimization case.')
+    parser.add_argument(
+        '--seed',
+        type=int,
+        default=101,
+        help='Single-seed fallback.'
+    )
+    parser.add_argument(
+        '--seeds',
+        default='101,202,303,404,505,606,707,808,909,1010',
+        help='Independent random seeds used for robustness analysis.'
+    )
     parser.add_argument('--pv-max-multiple',type=float,default=15.0)
     parser.add_argument('--pv-max-kw',type=float,default=30000.0)
     parser.add_argument('--batt-max-kwh',type=float,default=15000.0)
@@ -4566,6 +4569,10 @@ def main():
     parser.add_argument('--resume-existing',action='store_true')
     args=parser.parse_args()
 
+    seed_list=_parse_seed_list(args.seeds,args.seed)
+    print(f'Independent seeds : {seed_list}')
+    print(f'Number of seeds   : {len(seed_list)}')
+
     algorithms=_parse_algorithm_list(args.algorithms)
     configs=['PV-BT-EL-HT-FC','PV-BT-EL-HT','PV-EL-HT-FC','PV-EL-HT'] if args.config=='all' else [args.config]
     print('\n'+'='*108)
@@ -4573,7 +4580,7 @@ def main():
     print('PSO-GA | PSO-GWO | PSO-ABC | H2-demand sensitivity | aim-aligned MCDM | PTS-2030 | MTS-2050')
     print('='*108)
     print('Primary MCDM priority: LCOH > conservative H2 reliability > ASC > grid dependence > 24-h resilience > curtailment > water.')
-    print('Default run = baseline only, 10 independent seeds, clean bounds. Future scenarios run only in --study complete.')
+    print('Workflow: robust multi-seed baseline -> optimizer selection -> multi-seed H2 sensitivity -> multi-seed future scenarios.')
 
     data_path=resolve_input_path(args.data); args._resolved_data_path=data_path
     df_input,timestamps,Load,Solar_irr,grid_price_rm=load_kuching_hres_excel(data_path,args.sheet)
@@ -4620,100 +4627,206 @@ def main():
         unique_cases=len(h2_levels)+(max(0,len(grid_factors)-1) if args.include_grid_sensitivity_in_complete else 0)
         print(f'WARNING: COMPLETE FULL requests {unique_cases*len(algorithms)*len(configs)} baseline/sensitivity optimizer runs plus PTS-2030 and MTS-2050 winner reruns.')
 
-    # Build non-duplicated campaign cases. Baseline = 500 kg/day + default export cap.
-    cases=[]
-    baseline_d=float(args.h2_demand_kg_day); baseline_g=float(args.grid_export_limit_factor)
-    if args.study=='base':
-        cases=[('BASELINE',baseline_d,baseline_g,parent_dir)]
-    else:
-        if args.study in ('h2-sensitivity','complete'):
-            for d in h2_levels:
-                label='BASELINE' if np.isclose(d,baseline_d) else f'H2_{int(round(d)):04d}kg_day'
-                cdir=parent_dir/f'H2_{int(round(d)):04d}kg_day'
-                cases.append((label,d,baseline_g,cdir))
-        else:
-            cases.append(('BASELINE',baseline_d,baseline_g,parent_dir/'BASELINE'))
-        if args.study=='grid-sensitivity' or (args.study=='complete' and args.include_grid_sensitivity_in_complete):
-            # Baseline grid point is already in the case list; add only non-default caps.
-            for g in grid_factors:
-                if np.isclose(g,baseline_g): continue
-                slug=f'{g:.2f}'.replace('.','p')
-                cases.append((f'GRID_EXPORT_{slug}xPEAK',baseline_d,g,parent_dir/f'GRID_EXPORT_{slug}xPEAK'))
+    # =============================================================================
+    # V3.8 ROBUST SEQUENTIAL WORKFLOW
+    # =============================================================================
+    # Stage 1: baseline 500 kg/day
+    #          3 algorithms x 4 architectures x all seeds
+    # Stage 2: CRITIC-TOPSIS selects the robust baseline alternative
+    # Stage 3: H2 sensitivity
+    #          selected optimizer x 4 architectures x all seeds
+    # Stage 4: PTS-2030 and MTS-2050
+    #          selected baseline optimizer + architecture x all seeds
+    # =============================================================================
 
-    case_results={}; h2_frames=[]; grid_frames=[]; runtime_frames=[]
-    for label,demand,gfactor,cdir in cases:
-        is_baseline_case=np.isclose(demand,baseline_d) and np.isclose(gfactor,baseline_g)
-        use_multiseed=(args.seed_scope=='all') or is_baseline_case
-        if use_multiseed:
-            res=_execute_v38_multiseed_case(
-                args,cdir,label,algorithms,configs,run,base_lb,base_ub,
-                Load,Solar_irr,timestamps,ambient_temp,grid_price_usd,
-                demand,gfactor,horizons,emission_factors,
-                tech_case='BASELINE',run_mcdm=True,seeds=seed_list
-            )
-        else:
-            old_seed=args.seed
-            args.seed=int(seed_list[0])
-            try:
-                res=_execute_v37_case(
-                    args,cdir,label,algorithms,configs,run,base_lb,base_ub,
-                    Load,Solar_irr,timestamps,ambient_temp,grid_price_usd,
-                    demand,gfactor,horizons,emission_factors,
-                    tech_case='BASELINE',run_mcdm=True
-                )
-            finally:
-                args.seed=old_seed
-        case_results[label]=res; runtime_frames.append(res['runtime'])
-        comp=res['summary'][res['summary']['representative_solution'].eq('compromise')].copy()
-        if args.study in ('h2-sensitivity','complete') and np.isclose(gfactor,baseline_g): h2_frames.append(comp)
-        if (args.study=='grid-sensitivity' or (args.study=='complete' and args.include_grid_sensitivity_in_complete)) and np.isclose(demand,baseline_d): grid_frames.append(comp)
+    baseline_d=float(args.h2_demand_kg_day)
+    baseline_g=float(args.grid_export_limit_factor)
 
-    # Cross-H2 sensitivity only when two or more distinct levels really exist.
-    if h2_frames:
-        hs=pd.concat(h2_frames,ignore_index=True)
-        if hs['H2_demand_kg_day'].nunique()>=2:
-            hs.to_csv(parent_dir/'H2_Demand_Sensitivity_All_Algorithms_Compromise_Summary.csv',index=False)
-            plot_h2_sensitivity(hs,parent_dir/'figures_H2_sensitivity')
-            ref=hs[np.isclose(hs['H2_demand_kg_day'].astype(float),baseline_d)].copy()
-            if not ref.empty:
-                ref=ref.set_index(['algorithm','config']); rel=[]
-                for _,r in hs.iterrows():
-                    key=(r['algorithm'],r['config']); rr=r.to_dict()
-                    if key in ref.index:
-                        b=ref.loc[key]; b=b.iloc[0] if isinstance(b,pd.DataFrame) else b
-                        for col in ('ASC_net_USD_yr','LCOH_delivered_USD_kg','grid_dependence','PV_kW','Batt_kWh','Elec_kW','Tank_kg','FC_kW'):
-                            bv=float(b[col]); rv=float(r[col]); rr[f'{col}_pct_change_vs_{baseline_d:g}kg_day']=100*(rv-bv)/abs(bv) if abs(bv)>1e-12 else np.nan
-                    rel.append(rr)
-                pd.DataFrame(rel).to_csv(parent_dir/'H2_Demand_Sensitivity_Relative_to_Baseline.csv',index=False)
-
-    # Grid-export-flexibility sensitivity at 500 kg/day.
-    if grid_frames:
-        gs=pd.concat(grid_frames,ignore_index=True); gs=_add_h2_reliability_composite(gs)
-        if gs['grid_export_limit_factor'].nunique()>=2:
-            gs.to_csv(parent_dir/'Grid_Export_Sensitivity_All_Algorithms_Compromise_Summary.csv',index=False)
-            plot_grid_export_sensitivity(gs,parent_dir/'figures_Grid_export_sensitivity')
-
-    if runtime_frames: pd.concat(runtime_frames,ignore_index=True).to_csv(parent_dir/'V3_8_All_Cases_Runtime_Summary.csv',index=False)
-
-    # Locate baseline result regardless of workflow layout.
-    baseline_result=None
-    for label,demand,gfactor,cdir in cases:
-        if np.isclose(demand,baseline_d) and np.isclose(gfactor,baseline_g):
-            baseline_result=case_results[label]; break
-    if baseline_result is None: raise RuntimeError('Baseline 500 kg/day/default-grid case was not completed.')
-
-    winner=_select_baseline_winner(baseline_result,parent_dir)
+    # -------------------------------------------------------------------------
+    # STAGE 1 — ROBUST BASELINE
+    # -------------------------------------------------------------------------
     print('\n'+'='*108)
-    print('V3.8 ROBUST BASELINE WINNER')
-    print(f"Algorithm : {winner.get('algorithm')}")
-    print(f"System    : {winner.get('config')}")
-    print(f"LCOH      : {float(winner.get('LCOH_delivered_USD_kg',np.nan)):.4f} USD/kg-H2")
-    print(f"TOPSIS    : {float(winner.get('TOPSIS_score',np.nan)):.6f}")
+    print('STAGE 1: 500 kg/day ROBUST BASELINE')
+    print(f'{len(algorithms)} algorithms x {len(configs)} architectures x {len(seed_list)} independent seeds')
     print('='*108)
 
-    if not args.skip_future_scenarios:
-        _run_future_winner_scenarios(args,parent_dir,winner,run,base_lb,base_ub,Load,Solar_irr,
-                                     timestamps,ambient_temp,grid_price_usd,horizons,emission_factors)
+    baseline_dir=parent_dir/'BASELINE_500kg_10SEED'
+
+    baseline_result=_execute_v38_multiseed_case(
+        args,baseline_dir,'BASELINE_500kg',algorithms,configs,run,
+        base_lb,base_ub,Load,Solar_irr,timestamps,ambient_temp,
+        grid_price_usd,baseline_d,baseline_g,horizons,emission_factors,
+        tech_case='BASELINE',run_mcdm=True,seeds=seed_list
+    )
+
+    # -------------------------------------------------------------------------
+    # STAGE 2 — ROBUST BASELINE SELECTION
+    # -------------------------------------------------------------------------
+    winner=_select_baseline_winner(baseline_result,parent_dir)
+
+    selected_algorithm=_winner_algorithm_code(winner)
+    selected_algorithm_label=str(winner['algorithm'])
+    selected_config=str(winner['config'])
+
+    print('\n'+'='*108)
+    print('STAGE 2: ROBUST BASELINE SELECTION')
+    print(f'Algorithm    : {selected_algorithm_label}')
+    print(f'Architecture : {selected_config}')
+    print(f'LCOH         : {float(winner.get("LCOH_delivered_USD_kg",np.nan)):.4f} USD/kg-H2')
+    print(f'TOPSIS       : {float(winner.get("TOPSIS_score",np.nan)):.6f}')
+    print('='*108)
+
+    # -------------------------------------------------------------------------
+    # STAGE 3 — H2-DEMAND SENSITIVITY
+    # Selected optimizer only; all four architectures; all seeds.
+    # -------------------------------------------------------------------------
+    if args.study in ('h2-sensitivity','complete'):
+
+        print('\n'+'='*108)
+        print('STAGE 3: H2-DEMAND SENSITIVITY')
+        print(f'Optimizer     : {selected_algorithm_label}')
+        print(f'Architectures : {configs}')
+        print(f'Seeds         : {seed_list}')
+        print(f'H2 levels     : {h2_levels} kg/day')
+        print('='*108)
+
+        h2_frames=[]
+        h2_winner_rows=[]
+        h2_runtime_frames=[]
+
+        for demand in h2_levels:
+            sens_dir=parent_dir/f'H2_{int(round(demand)):04d}kg_day'
+            sens_dir.mkdir(parents=True,exist_ok=True)
+
+            # The 500 kg/day case was already run with all algorithms and all
+            # seeds. Reuse the selected optimizer's four architectures.
+            if np.isclose(demand,baseline_d):
+                sens_summary=baseline_result['summary'].copy()
+                sens_summary=sens_summary[
+                    sens_summary['algorithm'].astype(str).eq(selected_algorithm_label)
+                ].copy()
+
+                sens_summary.to_csv(
+                    sens_dir/'Selected_Optimizer_500kg_MultiSeed_Summary.csv',
+                    index=False
+                )
+
+                sens_mcdm={}
+                if (not args.skip_mcdm) and len(sens_summary)>0:
+                    sens_mcdm=run_critic_topsis(
+                        sens_summary,sens_dir,demand,archives_all=None
+                    )
+                    if args.figure_level=='full' and sens_mcdm:
+                        plot_mcdm_results(
+                            sens_mcdm,sens_dir/'figures_multiseed'
+                        )
+
+            # For the other H2 levels, run only the robust baseline optimizer.
+            else:
+                sens_result=_execute_v38_multiseed_case(
+                    args,sens_dir,f'H2_{int(round(demand)):04d}kg_day',
+                    [selected_algorithm],configs,run,base_lb,base_ub,
+                    Load,Solar_irr,timestamps,ambient_temp,grid_price_usd,
+                    demand,baseline_g,horizons,emission_factors,
+                    tech_case='BASELINE',run_mcdm=True,seeds=seed_list
+                )
+                sens_summary=sens_result['summary'].copy()
+                if not sens_result['runtime'].empty:
+                    h2_runtime_frames.append(sens_result['runtime'].copy())
+
+            comp=sens_summary[
+                sens_summary['representative_solution'].eq('compromise')
+            ].copy()
+            h2_frames.append(comp)
+
+            ranking_path=sens_dir/'MCDM_TOPSIS_ranking_STUDY_PRIORITY.csv'
+            if ranking_path.exists():
+                ranking=pd.read_csv(ranking_path)
+                if not ranking.empty:
+                    rank1=ranking.sort_values(
+                        ['TOPSIS_rank','TOPSIS_score'],
+                        ascending=[True,False]
+                    ).iloc[0].copy()
+                    rank1['H2_demand_kg_day']=demand
+                    h2_winner_rows.append(rank1)
+
+        if h2_frames:
+            hs=pd.concat(h2_frames,ignore_index=True)
+            hs.to_csv(
+                parent_dir/'H2_Demand_Sensitivity_Selected_Optimizer_10Seed.csv',
+                index=False
+            )
+            plot_h2_sensitivity(
+                hs,parent_dir/'figures_H2_sensitivity'
+            )
+
+            ref=hs[
+                np.isclose(
+                    hs['H2_demand_kg_day'].astype(float),
+                    baseline_d
+                )
+            ].copy()
+
+            if not ref.empty:
+                ref=ref.set_index(['algorithm','config'])
+                relative_rows=[]
+
+                for _,r in hs.iterrows():
+                    key=(r['algorithm'],r['config'])
+                    rr=r.to_dict()
+
+                    if key in ref.index:
+                        b0=ref.loc[key]
+                        if isinstance(b0,pd.DataFrame):
+                            b0=b0.iloc[0]
+
+                        for col in (
+                            'ASC_net_USD_yr','LCOH_delivered_USD_kg',
+                            'grid_dependence','PV_kW','Batt_kWh',
+                            'Elec_kW','Tank_kg','FC_kW'
+                        ):
+                            bv=float(b0[col])
+                            rv=float(r[col])
+                            rr[f'{col}_pct_change_vs_{baseline_d:g}kg_day']=(
+                                100.0*(rv-bv)/abs(bv)
+                                if abs(bv)>1e-12 else np.nan
+                            )
+
+                    relative_rows.append(rr)
+
+                pd.DataFrame(relative_rows).to_csv(
+                    parent_dir/'H2_Demand_Sensitivity_Relative_to_500kg.csv',
+                    index=False
+                )
+
+        if h2_winner_rows:
+            pd.DataFrame(h2_winner_rows).to_csv(
+                parent_dir/'H2_Demand_MCDM_Selected_Architecture.csv',
+                index=False
+            )
+
+        if h2_runtime_frames:
+            pd.concat(h2_runtime_frames,ignore_index=True).to_csv(
+                parent_dir/'V3_8_H2_Sensitivity_Runtime_Summary.csv',
+                index=False
+            )
+
+    # -------------------------------------------------------------------------
+    # STAGE 4 — PTS-2030 AND MTS-2050
+    # -------------------------------------------------------------------------
+    if args.study=='complete' and not args.skip_future_scenarios:
+
+        print('\n'+'='*108)
+        print('STAGE 4: PTS-2030 AND MTS-2050')
+        print(f'Optimizer    : {selected_algorithm_label}')
+        print(f'Architecture : {selected_config}')
+        print(f'Seeds        : {seed_list}')
+        print('='*108)
+
+        _run_future_winner_scenarios(
+            args,parent_dir,winner,run,base_lb,base_ub,Load,Solar_irr,
+            timestamps,ambient_temp,grid_price_usd,horizons,emission_factors
+        )
 
     zip_path=None
     if args.make_full_zip: zip_path=shutil.make_archive(str(parent_dir),'zip',root_dir=parent_dir)
