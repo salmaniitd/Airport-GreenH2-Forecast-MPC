@@ -1,0 +1,22 @@
+{
+  "all_green_compliant": true,
+  "all_h2_served": true,
+  "all_solver_optimal": true,
+  "all_technical_feasible": true,
+  "cases_completed": 4,
+  "created_utc": "2026-11-18T04:29:45+00:00",
+  "grids": [
+    "base_export"
+  ],
+  "protocol": "R1C4_COMMON_OPTIMIZER_2X2_FACTORIAL_V1",
+  "published_reference_simulations_rerun": false,
+  "source_nasa_reused_in_all_variants": true,
+  "state_sha256": "3438b07d78ba6d7bc735244db52622c9a8cda34ce6f739bdd31e47a33013317a",
+  "status": "PASS_SOLVER_OPTIMALITY",
+  "variants": [
+    "LOCAL_24",
+    "GFS_24",
+    "LOCAL_72",
+    "GFS_72"
+  ]
+}

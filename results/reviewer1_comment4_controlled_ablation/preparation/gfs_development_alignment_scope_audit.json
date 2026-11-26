@@ -1,0 +1,15 @@
+{
+  "development_target_start_myt": "2025-05-27 00:00:00",
+  "development_target_end_myt": "2025-10-19 23:55:00",
+  "gfs_cache_ok_rows_before_target_scope_filter": 8204,
+  "gfs_rows_with_target_inside_development": 8098,
+  "gfs_rows_outside_development_target_support": 106,
+  "out_of_scope_before_development": 1,
+  "out_of_scope_after_development": 105,
+  "weather_match_fraction_in_supported_scope": 1.0,
+  "lag7_local_reference_match_fraction_in_supported_scope": 1.0,
+  "minimum_match_fraction_required": 0.995,
+  "out_of_scope_rows_counted_as_alignment_failures": false,
+  "out_of_scope_rows_retained_in_operational_gfs_cache": true,
+  "scientific_reason": "GFS issue/lead coverage intentionally extends outside Development target support for causal 72 h controller availability; alignment metrics are defined only where Development actual targets exist."
+}

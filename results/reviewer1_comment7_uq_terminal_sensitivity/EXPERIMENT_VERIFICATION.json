@@ -1,0 +1,21 @@
+{
+  "all_h2_service_100pct": true,
+  "all_solver_optimal": true,
+  "case_count_completed": 14,
+  "case_count_expected": 14,
+  "case_failures": [],
+  "created_utc": "2026-11-18T11:33:23+00:00",
+  "forecast_error_q90_preserved": true,
+  "original_core_and_nasa_frozen": true,
+  "original_gfs_blend_beta_preserved": true,
+  "protocol": "R1C7_DETERMINISTIC_UQ_TV_PRESPECIFIED_SENSITIVITY_V1",
+  "published_reference_reproduced": true,
+  "renewable_compliant_cases": 14,
+  "solver_total_decisions": 98112,
+  "solver_total_optimal": 98112,
+  "state_sha256": "3438b07d78ba6d7bc735244db52622c9a8cda34ce6f739bdd31e47a33013317a",
+  "status": "COMPLETE_PASS_ALL_GATES",
+  "technically_feasible_cases": 14,
+  "test_data_used_for_coefficient_selection": false,
+  "uncertainty_method_is_deterministic_not_stochastic_or_robust": true
+}

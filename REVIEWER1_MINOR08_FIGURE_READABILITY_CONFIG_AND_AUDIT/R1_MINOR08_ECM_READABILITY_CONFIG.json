@@ -1,0 +1,177 @@
+{
+  "output": {
+    "dpi": 600,
+    "formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "make_contact_sheet": true,
+    "contact_sheet_dpi": 170,
+    "pad_inches": 0.1
+  },
+  "typography": {
+    "font_family": "DejaVu Sans",
+    "base_size": 9.3,
+    "axes_title_size": 10.5,
+    "axes_label_size": 10.0,
+    "tick_label_size": 9.0,
+    "legend_size": 8.3,
+    "figure_title_size": 11.5,
+    "figure_subtitle_size": 8.3,
+    "panel_label_size": 11.3,
+    "annotation_size": 8.25,
+    "axes_line_width": 0.85,
+    "line_width": 1.8,
+    "marker_size": 5.4
+  },
+  "controllers": {
+    "display_labels": [
+      "Rule-based",
+      "Causal MPC",
+      "ET-MPC-24h",
+      "Hybrid-GFS-72h"
+    ]
+  },
+  "figures": {
+    "3": {
+      "size_inches": [
+        7.55,
+        4.45
+      ],
+      "subtitle": "Development-B confirmation; local-GFS hybrid weights fixed on Development-A",
+      "layout": {
+        "rect": [
+          0.02,
+          0.02,
+          1.0,
+          0.84
+        ],
+        "w_pad": 2.3
+      }
+    },
+    "4": {
+      "size_inches": [
+        7.55,
+        5.15
+      ],
+      "subtitle": "73-day held-out period; 425 kg H₂ day⁻¹; connected markers show export regimes",
+      "layout": {
+        "rect": [
+          0.02,
+          0.02,
+          1.0,
+          0.82
+        ]
+      },
+      "legends": {
+        "controllers": {
+          "font_size": 8.0
+        },
+        "scenarios": {
+          "font_size": 8.0
+        }
+      }
+    },
+    "5": {
+      "size_inches": [
+        7.85,
+        6.2
+      ],
+      "subtitle": "73-day held-out period; 425 kg H₂ day⁻¹; base-export scenario",
+      "value_label_size": 8.1,
+      "layout": {
+        "rect": [
+          0.02,
+          0.02,
+          1.0,
+          0.85
+        ],
+        "w_pad": 2.2,
+        "h_pad": 2.6
+      }
+    },
+    "6": {
+      "size_inches": [
+        7.85,
+        5.5
+      ],
+      "subtitle": "15 held-out transitions; pre-build distribution uses 10 scarcity events",
+      "legend": {
+        "columns": 2,
+        "font_size": 8.1
+      },
+      "layout": {
+        "rect": [
+          0.02,
+          0.02,
+          1.0,
+          0.8
+        ],
+        "w_pad": 2.1
+      }
+    },
+    "7": {
+      "size_inches": [
+        7.55,
+        6.2
+      ],
+      "subtitle": "73-day held-out period; 20 MW grid import; 3 MW grid export",
+      "legend": {
+        "columns": 3,
+        "font_size": 8.0
+      },
+      "layout": {
+        "rect": [
+          0.02,
+          0.02,
+          1.0,
+          0.8
+        ],
+        "h_pad": 2.3
+      }
+    },
+    "8": {
+      "size_inches": [
+        7.55,
+        4.9
+      ],
+      "subtitle": "73-day held-out period; 425 kg H₂ day⁻¹; Hybrid-GFS-72h",
+      "legend": {
+        "font_size": 8.0
+      },
+      "layout": {
+        "rect": [
+          0.02,
+          0.02,
+          1.0,
+          0.82
+        ],
+        "w_pad": 2.6
+      },
+      "panels": {
+        "b": {
+          "xlabel": "Screening LCOH (USD kg⁻¹ H₂)"
+        }
+      }
+    },
+    "9": {
+      "size_inches": [
+        7.55,
+        4.8
+      ],
+      "subtitle": "73-day held-out period; 460 kg H₂ day⁻¹; 12 h operating reserve",
+      "legend": {
+        "font_size": 8.0
+      },
+      "layout": {
+        "rect": [
+          0.02,
+          0.02,
+          1.0,
+          0.8
+        ]
+      }
+    }
+  }
+}

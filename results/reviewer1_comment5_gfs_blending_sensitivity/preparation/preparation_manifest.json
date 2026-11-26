@@ -1,0 +1,71 @@
+{
+  "beta_original_selected_on": "Development-A only",
+  "calibration_frozen_across_beta_cases": true,
+  "calibration_semantics": "All variants share initial alpha (6-24h), GFS irradiance scales, published q90 PV forecast uncertainty calibration, and ET; no recalibration or retuning of UQ/terminal values occurs when beta changes.",
+  "contents_verification": {
+    "final_test_rows": 21024,
+    "gfs_q90_sha256": "a9884519d2cc10da50a250795f9ef2ca45526a5c2caf564c251cf580d4675b06",
+    "gfs_scales_sha256": "0e49a87b7495d8a2f3f24535e14aaf7d05c43dbd2583ee5440955d56f76316e5",
+    "reference_blend_weights": {
+      "24_48h": 0.6,
+      "48_72h": 0.6
+    },
+    "terminal_value_mode": "ENABLED (original full controller)",
+    "uncertainty_mode": "ENABLED (original full controller)"
+  },
+  "control_min": 15,
+  "controller_architecture": "FULL published Hybrid-GFS-UQ-MT-MPC-72h-TV (TV and UQ ON)",
+  "controller_grid_scenario": "base_export",
+  "controller_h2_kg_day": 425.0,
+  "created_utc": "2026-11-18T07:00:32+00:00",
+  "development_days": 146,
+  "gfs_cache_sha256": {
+    "gfs_development_f006_f084.csv": "7a4d33e9077b832b3d7c808ff5da7c27022214266b831cdca342e21337245dae",
+    "gfs_final_test_f006_f084.csv": "0fb6157792ccfb1251d702ceef213e784e78ee59ef6046d1dbb41859e6f3cfde"
+  },
+  "green_target_fraction": 0.7,
+  "held_out_days": 73,
+  "joint_coefficient_levels": [
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "master_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "no_final_test_tuning_or_beta_selection": true,
+  "original_source_or_workbook_modified": false,
+  "physical_min": 5,
+  "predictive_horizon_h": 72,
+  "preparation_method": "REUSED_R1C4_VERIFIED_SHARED_STATE",
+  "protocol": "R1C5_FROZEN_FULL_CONTROLLER_GFS_BETA_LOCAL_SENSITIVITY_V1",
+  "published_reference": {
+    "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+    "green_h2_fraction": 0.7335097314306523,
+    "grid_scenario": "base_export",
+    "h2_demand_rate_kg_day": 425.0,
+    "h2_service_fraction": 1.0,
+    "operating_cost_usd": 199485.65050462523,
+    "original_published_comparators": {
+      "Causal MPC": {
+        "green_h2_fraction": 0.7383167467628312,
+        "operating_cost_usd": 199474.5635540974
+      },
+      "ExtraTrees-MPC-24h": {
+        "green_h2_fraction": 0.7263009467714675,
+        "operating_cost_usd": 199656.02209285123
+      },
+      "Rule-Based EMS": {
+        "green_h2_fraction": 0.7543108670613718,
+        "operating_cost_usd": 199126.61737404452
+      }
+    },
+    "sha256": "bc157737ba2d935cd532b83099f44273825d2cd1cefa3aa4691243df4f6fd48a",
+    "source_csv": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\results\\reference\\reference_final_test_pooled.csv"
+  },
+  "single_segment_perturbations": "0.40,0.80 (other segment at 0.60)",
+  "source_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "state_sha256": "3438b07d78ba6d7bc735244db52622c9a8cda34ce6f739bdd31e47a33013317a",
+  "status": "PREPARATION_VERIFIED",
+  "training_days": 512
+}

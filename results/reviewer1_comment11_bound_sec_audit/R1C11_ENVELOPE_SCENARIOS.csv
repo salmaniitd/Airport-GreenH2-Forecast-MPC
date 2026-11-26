@@ -1,0 +1,7 @@
+model,green_h2_potential_kg,optimistic_70pct_necessary_demand_limit_kg_per_day,description
+nominal_fixed_SEC55_original,23981.292017,469.30121364,"Published 55 kWh/kg optimistic residual-PV resource envelope; ignores min-load, ramp, storage dynamics."
+curve_SEC_no_min_load,24243.11904,474.42503014,Part-load SEC at direct-residual power; below 10% rating extrapolated as SEC at 10%; ignores min stable power.
+curve_SEC_10pct_min_direct_only,24133.186927,472.27371676,Part-load SEC; switch off where direct PV surplus <400 kW; assumes no grid-supported min load.
+curve_SEC_10pct_min_grid_assisted,24243.11904,474.42503014,"Part-load SEC; when PV residual <400 kW, assumes external grid supplements PEM to minimum while only PV-derived energy is green. No dynamic feasibility proof."
+absolute_curve_min_SEC52p5_optimistic,25123.258304,491.64889048,"Very loose energy-to-green-H2 ceiling using the best SEC at every instant, independent of load. Not an executable PEM schedule."
+absolute_curve_max_SEC58p5_conservative,22546.513862,441.22336325,Uniform worst SEC envelope for scale only; not a manufacturer-calibrated physical schedule.

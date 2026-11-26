@@ -1,0 +1,3 @@
+tariff_bin_rm_kwh,intervals,headroom_events,nameplate_headroom_energy_kwh,pv_only_energy_proxy_kwh,nameplate_foregone_export_revenue_rm,planned_slack_positive_intervals
+RM 0.27230/kWh,15936,1238,42384.26563,42384.26563,8078.864872,12462
+RM 0.31320/kWh,5088,714,22453.56115,22093.56115,4922.718747,3936

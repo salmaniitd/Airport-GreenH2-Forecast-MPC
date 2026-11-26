@@ -1,0 +1,56 @@
+{
+  "all_decisions_solver_optimal": true,
+  "case": "original 460 kg/day, 12h H2 reserve, 3MW export; 4MW PEM",
+  "critical_scope_limitations": [
+    "Nameplate export-headroom energy is an opportunity indicator, not proven PV-sourced or recoverable energy.",
+    "PV-only and tank-space numbers are more conservative instantaneous proxies; they still do not prove a feasible time-coupled schedule.",
+    "The archived physical trajectory cannot independently reveal which LP constraint was marginal in a particular solve.",
+    "The marginal objective signs are confirmed from original executable source; their coexistence does not prove a unique causal mechanism.",
+    "An additional PEM kilowatt-hour can affect later H2 storage, demand, green slack and revenue; no counterfactual dispatch is performed.",
+    "Slack entries are horizon-specific; summed slack is not a physical renewable shortfall or campaign cost.",
+    "Forecast-availability mismatch cannot be quantified using only the executed archived dispatch; do not assign a causal share to forecast errors.",
+    "All figures use reconstructed airport demand and PV trajectories, not measured on-site 5-minute ground truth."
+  ],
+  "date_utc": "2026-11-19T00:27:57.852570+00:00",
+  "export_headroom_below_terminal_h2_target_mwh": 44.36289251801978,
+  "export_headroom_days": 66,
+  "export_headroom_interval_count": 1952,
+  "export_headroom_with_positive_slack_mwh": 46.46823632937332,
+  "five_min_rows": 21024,
+  "fraction_planned_slack_positive_pct": 77.99657534246575,
+  "mpc_decisions": 7008,
+  "nameplate_foregone_export_revenue_rm": 13001.583619692516,
+  "observed_total_grid_export_mwh": 254.08994659650085,
+  "original_coefficients": {
+    "minimum_renewable_h2_fraction": 0.7,
+    "mpc_green_slack_penalty_rm_per_kg": 10000.0,
+    "pem_kwh_per_kg": 55.0,
+    "sell_price_factor": 0.7,
+    "terminal_h2_value_penalty_rm_per_kg": 15.0,
+    "terminal_soc_value_penalty_rm_per_kwh": 0.15
+  },
+  "original_nameplate_export_headroom_mwh": 64.83782678699954,
+  "period": "2025-10-20 through 2025-12-31 (73 days)",
+  "positive_planned_slack_decisions": 5466,
+  "protocol": "R1C9_FROZEN_460KG_EXPORT_OBJECTIVE_INTERVAL_AUDIT_V1",
+  "published_controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+  "published_usd_operating_cost": 207644.74411349412,
+  "pv_only_export_headroom_proxy_mwh": 64.47782678834064,
+  "pv_only_foregone_export_revenue_rm": 12922.657219986535,
+  "realized_green_fraction_pct": 67.92426412619297,
+  "renewable_shortfall_equivalent_mwh": 38.33676585334229,
+  "renewable_shortfall_kg": 697.0321064244054,
+  "source_integrity": {
+    "frozen_core_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+    "frozen_master_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+    "original_master_found": true,
+    "stress_archive": {
+      "bytes": 2711827,
+      "compressed_sha256": "de97d740a1825ddf37055d15d19cd9291c3bdf7f0162d358aaf1fb230152c6fc",
+      "file": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\results\\stress\\dispatch\\stress_1_weather\\Hybrid-GFS-UQ-MT-MPC-72h-TV_dispatch.csv.gz",
+      "git_blob_sha1": "487ec297c152bbcf46bcda56ab4fffac94b62aa3"
+    }
+  },
+  "tank_space_capped_pv_only_proxy_mwh": 64.47782678834064,
+  "tank_space_proxy_foregone_export_revenue_rm": 12922.657219986535
+}

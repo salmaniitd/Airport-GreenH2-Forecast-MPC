@@ -1,0 +1,114 @@
+{
+  "frozen_state": {
+    "label": "R1C7",
+    "manifest_sha256": "f8f319e7a27528ab20b244bea5837c9c342b4e462a0bc2c1e5b905a2c0d28736",
+    "path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\results\\reviewer1_comment7_uq_terminal_sensitivity\\preparation\\frozen_common_bundle.joblib",
+    "sha256": "3438b07d78ba6d7bc735244db52622c9a8cda34ce6f739bdd31e47a33013317a"
+  },
+  "gfs_cache_sha256": {
+    "gfs_development_f006_f084.csv": "7a4d33e9077b832b3d7c808ff5da7c27022214266b831cdca342e21337245dae",
+    "gfs_final_test_f006_f084.csv": "0fb6157792ccfb1251d702ceef213e784e78ee59ef6046d1dbb41859e6f3cfde"
+  },
+  "interpretation": [
+    "A penalized LP shortfall slack softens planned renewable constraints; all LPs can be optimal while 73-day realized renewable share is <70%.",
+    "The RM 10,000/kg coefficient penalizes the slack in each receding-horizon LP; it is NOT an actual cash operating cost and the 7008 values cannot be added to estimate a campaign-wide violation.",
+    "Forecast error, forecast-dependent derating, receding-horizon operation, and optional LP slack allow planned/realized mismatch; this audit does not allocate a causal fraction to each mechanism.",
+    "The optimistic physical upper bound is necessary, not sufficient for dynamic feasibility; 70% is achieved by other published controllers under the same stress scenario.",
+    "Physical feasibility metrics differ from passing the 70% renewable-attribution criterion.",
+    "Headroom-export opportunity does not prove the entire exported amount could be redirected while honoring time-coupled tank/inventory constraints."
+  ],
+  "no_calibration_or_model_parameter_changed": true,
+  "original_cost_and_green_baseline_reproduction": {
+    "green_h2_fraction": {
+      "delta": 0.0,
+      "original": 0.6792426412619296,
+      "reproduced": 0.6792426412619296
+    },
+    "green_h2_kg": {
+      "delta": 0.0,
+      "original": 22808.967893575624,
+      "reproduced": 22808.967893575624
+    },
+    "h2_produced_kg": {
+      "delta": 0.0,
+      "original": 33580.000000000044,
+      "reproduced": 33580.000000000044
+    },
+    "operating_cost_usd": {
+      "delta": 0.0,
+      "original": 207644.74411349412,
+      "reproduced": 207644.74411349412
+    },
+    "pv_exported_while_pem_headroom_mwh": {
+      "delta": 0.0,
+      "original": 64.83782678699954,
+      "reproduced": 64.83782678699954
+    },
+    "pv_to_pem_energy_mwh": {
+      "delta": 0.0,
+      "original": 1254.4932341466592,
+      "reproduced": 1254.4932341466592
+    }
+  },
+  "original_stress_reference": "salmaniitd/Airport-GreenH2-Forecast-MPC/results/stress/stress_1_weather/stress_1_weather_summary.csv",
+  "physical_reconciliation": {
+    "actual_green_h2_fraction_pct": 67.92426412619297,
+    "additional_direct_pv_energy_equivalent_mwh": 38.33676585334229,
+    "annual_70pct_direct_renewable_compliance": "FAIL",
+    "campaign_green_h2_target_pct": 70.0,
+    "conditional_hydrogen_feasibility": "PASS",
+    "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+    "direct_pv_h2_kg": 22808.967893575624,
+    "forecast_green_credit_max": 0.85,
+    "forecast_green_credit_mean": 0.6131862939754962,
+    "forecast_green_credit_min": 0.6090759804567061,
+    "green_slack_last_decision_kg": 697.0321064237396,
+    "green_slack_max_kg_per_mpc_solve": 2426.6465419731167,
+    "green_slack_mean_kg_per_mpc_solve": 915.1386498966328,
+    "green_slack_mpc_decisions_count": 7008,
+    "green_slack_p95_kg_per_mpc_solve": 2202.3238345520276,
+    "green_slack_positive_decisions_count": 5466,
+    "green_slack_positive_decisions_fraction_pct": 77.99657534246576,
+    "lp_green_shortfall_is_not_realized_campaign_h2_shortfall": true,
+    "lp_green_shortfall_penalty_rm_per_kg_per_optimization": 10000.0,
+    "lp_green_shortfall_slack_lower_bound_kg": 0,
+    "lp_green_shortfall_slack_upper_bound_kg": null,
+    "optimistic_maximum_direct_pv_h2_kg": 23981.292017,
+    "optimistic_physical_upper_fraction_pct": 71.41540207564027,
+    "optimistic_resource_above_realized_h2_kg": 1172.324123424376,
+    "per_solve_slack_is_not_a_realized_cash_cost": true,
+    "pv_export_headroom_to_shortfall_energy_ratio": 1.6912701252640179,
+    "pv_exported_with_available_pem_headroom_mwh": 64.83782678699954,
+    "realized_green_h2_shortfall_kg": 697.0321064244054,
+    "required_green_h2_to_reach_70pct_kg": 23506.00000000003,
+    "scenario": "460 kg/day, 12h H2 reserve, 3 MW export",
+    "simulation_period_days": 73,
+    "solar_export_with_headroom_is_only_a_nameplate_opportunity_not_proof_all_energy_recoverable": true,
+    "study_report_case_status_pass_means_solver_and_h2_service_not_70pct_green_compliance": true,
+    "total_h2_produced_kg": 33580.000000000044
+  },
+  "protocol": "R1C8_FROZEN_460KG_SOFT_GREEN_CONSTRAINT_FORENSIC_V1",
+  "resource_bound": {
+    "green_h2_target": 0.7,
+    "interpretation": "necessary resource bound, not dynamic feasibility proof",
+    "maximum_direct_pv_h2_kg": 23981.292017,
+    "optimistic_green_h2_fraction_bound": 0.7141540207564027,
+    "pem_cap_kw": 4000.0,
+    "required_net_h2_production_kg": 33580.0,
+    "target_resource_feasible": true
+  },
+  "solver": {
+    "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+    "feasible_unknown_accepted": 0,
+    "max_solve_time_ms": 30.524500005412847,
+    "mean_solve_time_ms": 13.61364296524316,
+    "optimal_decisions": 7008,
+    "p95_solve_time_ms": 16.224265022901818,
+    "publication_solver_gate": true,
+    "solver_decisions": 7008,
+    "solver_retries": 0
+  },
+  "source_code_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "source_master_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "timestamp_utc": "2026-11-18T13:56:27.720778+00:00"
+}

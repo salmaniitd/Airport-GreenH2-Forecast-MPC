@@ -1,0 +1,23 @@
+SOURCE SCRIPT: D:\Salman_Official\UKM\Research_Work\Paper_writing\writing\RLEMS_HRES_Malaysia\RLEMS_airport_REPRO\code\figures\ECM_Figures_3_to_9_From_Excel_FINAL_REPRO.py
+SOURCE WORKBOOK: D:\Salman_Official\UKM\Research_Work\Paper_writing\writing\RLEMS_HRES_Malaysia\RLEMS_airport_REPRO\results\source_data\ECM_Figures_3_to_9_Source_Data_FINAL_REPRO.xlsx
+CONFIG: D:\Salman_Official\UKM\Research_Work\Paper_writing\writing\RLEMS_HRES_Malaysia\RLEMS_airport_REPRO\R1_MINOR08_ECM_READABILITY_CONFIG.json
+
+Fig_03_Forecast_Skill.png | 498475 bytes
+Fig_03_Forecast_Skill.pdf | 30038 bytes
+Fig_03_Forecast_Skill.svg | 44555 bytes
+Fig_04_Cost_Renewable_Tradeoff.png | 449505 bytes
+Fig_04_Cost_Renewable_Tradeoff.pdf | 27249 bytes
+Fig_04_Cost_Renewable_Tradeoff.svg | 24080 bytes
+Fig_05_Dispatch_Mechanism.png | 568716 bytes
+Fig_05_Dispatch_Mechanism.pdf | 29352 bytes
+Fig_05_Dispatch_Mechanism.svg | 47381 bytes
+Fig_06_Weather_Events_and_Prebuild.png | 635551 bytes
+Fig_06_Weather_Events_and_Prebuild.pdf | 34291 bytes
+Fig_06_Weather_Events_and_Prebuild.svg | 50085 bytes
+Fig_07_Renewable_Hydrogen_Envelope.png | 705715 bytes
+Fig_07_Renewable_Hydrogen_Envelope.pdf | 29771 bytes
+Fig_07_Renewable_Hydrogen_Envelope.svg | 36272 bytes
+Fig_08_PEM_Capacity_Operating_Realism.png | 491301 bytes
+Fig_08_PEM_Capacity_Operating_Realism.pdf | 27710 bytes
+Fig_08_PEM_Capacity_Operating_Realism.svg | 29211 bytes
+Figures_03_to_09_Contact_Sheet.png | 1751327 bytes

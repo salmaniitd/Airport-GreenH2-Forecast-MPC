@@ -1,0 +1,138 @@
+{
+  "battery_throughput_mwh": 3.3678947378427293,
+  "case": "TV_OFF",
+  "controller_tv_enabled": false,
+  "controller_uq_enabled": true,
+  "core_parameter_audit": {
+    "changed_parameters": {},
+    "effective_V30_parameters": {
+      "detailed_slot_minutes": 15,
+      "et_detailed_hours": 24,
+      "long_slot_minutes": 60,
+      "long_tail_end_hours": 72,
+      "medium_slot_minutes": 30,
+      "medium_tail_end_hours": 48,
+      "terminal_h2_scarcity_buffer_max_kg": 75.0,
+      "terminal_h2_target_cap_kg": 720.0,
+      "terminal_h2_uncertainty_buffer_max_kg": 50.0,
+      "terminal_h2_value_penalty_rm_kg": 15.0,
+      "terminal_price_scale_rm_kwh": 0.05,
+      "terminal_soc_price_gain": 0.05,
+      "terminal_soc_surplus_gain": 0.04,
+      "terminal_soc_value_penalty_rm_kwh": 0.15,
+      "terminal_surplus_scale_kw": 1500.0,
+      "uq_green_derate_max": 0.85
+    },
+    "original_V30_parameters": {
+      "detailed_slot_minutes": 15,
+      "et_detailed_hours": 24,
+      "long_slot_minutes": 60,
+      "long_tail_end_hours": 72,
+      "medium_slot_minutes": 30,
+      "medium_tail_end_hours": 48,
+      "terminal_h2_scarcity_buffer_max_kg": 75.0,
+      "terminal_h2_target_cap_kg": 720.0,
+      "terminal_h2_uncertainty_buffer_max_kg": 50.0,
+      "terminal_h2_value_penalty_rm_kg": 15.0,
+      "terminal_price_scale_rm_kwh": 0.05,
+      "terminal_soc_price_gain": 0.05,
+      "terminal_soc_surplus_gain": 0.04,
+      "terminal_soc_value_penalty_rm_kwh": 0.15,
+      "terminal_surplus_scale_kw": 1500.0,
+      "uq_green_derate_max": 0.85
+    }
+  },
+  "direct_renewable_h2_percent": 71.48311366086732,
+  "elapsed_seconds": 2051.0,
+  "frozen_model_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "frozen_workbook_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "grid_export_mwh": 289.56448690673557,
+  "grid_import_mwh": 3511.5413332336384,
+  "grid_scenario": "base_export",
+  "hydrogen_demand_kg_day": 425.0,
+  "hydrogen_served_percent": 100.0,
+  "operating_cost_usd": 199872.94861961756,
+  "outputs_sha256": {
+    "physical_dispatch.csv.gz": "51de268f477719d495e9338149b13dca4fa3627336fa34db13f01942f763f3dd",
+    "solver_decisions.csv.gz": "74d8b1f9f53e158bdd334795c2ee5cf276e97b96ee023b839c40eb1f1ad9e4d6"
+  },
+  "protocol": "R1C7_DETERMINISTIC_UQ_TV_PRESPECIFIED_SENSITIVITY_V1",
+  "pv_exported_with_pem_headroom_mwh": 100.24760514230019,
+  "pv_to_pem_mwh": 1219.5734021680641,
+  "realized_adaptation_signals": {
+    "confidence": {
+      "count": 7008,
+      "max": 1.0,
+      "mean": 0.21062097991832016,
+      "min": 0.1969199348556867,
+      "std": 0.04894613089586415
+    },
+    "green_credit_derate": {
+      "count": 7008,
+      "max": 0.85,
+      "mean": 0.6131862939754962,
+      "min": 0.6090759804567061,
+      "std": 0.014683839268759245
+    },
+    "green_scarcity": {
+      "count": 7008,
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "std": 0.0
+    },
+    "predicted_terminal_h2_kg": {
+      "count": 7008,
+      "max": 596.5375285376145,
+      "mean": 198.3266496523113,
+      "min": 75.0,
+      "std": 156.20060577517808
+    },
+    "terminal_h2_slack_kg": {
+      "count": 7008,
+      "max": 520.0,
+      "mean": 396.69502945058673,
+      "min": 9.999999997489795e-05,
+      "std": 156.14554021742336
+    },
+    "terminal_h2_target_cap_binding_fraction": 0.0,
+    "terminal_h2_target_kg": {
+      "count": 7008,
+      "max": 595.0,
+      "mean": 595.0,
+      "min": 595.0,
+      "std": 0.0
+    },
+    "terminal_soc_target": {
+      "count": 7008,
+      "max": 0.55,
+      "mean": 0.5499999999999999,
+      "min": 0.55,
+      "std": 1.1102230246251565e-16
+    },
+    "uncertainty_score": {
+      "count": 7008,
+      "max": 0.8030800651443133,
+      "mean": 0.7893790200816799,
+      "min": 0.0,
+      "std": 0.04894613089586415
+    }
+  },
+  "renewable_70pct_compliant": true,
+  "renewable_margin_percentage_points": 1.483113660867319,
+  "solver_decisions": 7008,
+  "solver_mean_time_ms": 23.913841738008305,
+  "solver_optimal": 7008,
+  "solver_unknown": 0,
+  "spec": {
+    "case": "TV_OFF",
+    "factor": "mechanism_ablation",
+    "level": "terminal_value_disabled",
+    "overrides": {},
+    "tv_enabled": false,
+    "uq_enabled": true
+  },
+  "state_sha256": "3438b07d78ba6d7bc735244db52622c9a8cda34ce6f739bdd31e47a33013317a",
+  "status": "COMPLETED",
+  "technical_feasible": true
+}

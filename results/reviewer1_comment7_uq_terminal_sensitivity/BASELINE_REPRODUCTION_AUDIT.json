@@ -1,0 +1,11 @@
+{
+  "cost_difference_usd": 0.0,
+  "cost_tolerance_usd": 1.0,
+  "green_difference_percentage_points": 0.0,
+  "green_tolerance_pp": 0.02,
+  "passed": true,
+  "published_cost_usd": 199485.65050462523,
+  "published_green_percent": 73.35097314306523,
+  "reproduced_cost_usd": 199485.65050462523,
+  "reproduced_green_percent": 73.35097314306523
+}

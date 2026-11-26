@@ -1,0 +1,12 @@
+{
+  "sha256_original_xlsx": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "source_xlsx_name": "KotaBharu_Airport_Master_5min_2024_2025_SCRIPT_READY.xlsx",
+  "nasa_pv_rows": 210528,
+  "nasa_pv_csv_gz_sha256": "4d7cd2a836ba3c36accb7d8b34dee8c7837e0c89d8beab7a061524c4ae974313",
+  "sha256_source_match": true,
+  "cams_edge_filename": "CAMS_20231231_UTC_expert.csv",
+  "cams_edge_sha256": "e07b59f5596501ed41ad6504d86f508f17bb98182d49193a8e29dfea77a8fb1e",
+  "original_workbook_unchanged": true,
+  "no_imputation_performed": true,
+  "source_pv_not_equivalent_to_hourly_means_only": "Exact 5-min PV required for per-hour energy matching"
+}

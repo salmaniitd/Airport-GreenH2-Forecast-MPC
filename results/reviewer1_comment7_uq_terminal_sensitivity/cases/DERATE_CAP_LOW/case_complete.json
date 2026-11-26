@@ -1,0 +1,145 @@
+{
+  "battery_throughput_mwh": 3.3678947378427293,
+  "case": "DERATE_CAP_LOW",
+  "controller_tv_enabled": true,
+  "controller_uq_enabled": true,
+  "core_parameter_audit": {
+    "changed_parameters": {
+      "uq_green_derate_max": [
+        0.85,
+        0.7
+      ]
+    },
+    "effective_V30_parameters": {
+      "detailed_slot_minutes": 15,
+      "et_detailed_hours": 24,
+      "long_slot_minutes": 60,
+      "long_tail_end_hours": 72,
+      "medium_slot_minutes": 30,
+      "medium_tail_end_hours": 48,
+      "terminal_h2_scarcity_buffer_max_kg": 75.0,
+      "terminal_h2_target_cap_kg": 720.0,
+      "terminal_h2_uncertainty_buffer_max_kg": 50.0,
+      "terminal_h2_value_penalty_rm_kg": 15.0,
+      "terminal_price_scale_rm_kwh": 0.05,
+      "terminal_soc_price_gain": 0.05,
+      "terminal_soc_surplus_gain": 0.04,
+      "terminal_soc_value_penalty_rm_kwh": 0.15,
+      "terminal_surplus_scale_kw": 1500.0,
+      "uq_green_derate_max": 0.7
+    },
+    "original_V30_parameters": {
+      "detailed_slot_minutes": 15,
+      "et_detailed_hours": 24,
+      "long_slot_minutes": 60,
+      "long_tail_end_hours": 72,
+      "medium_slot_minutes": 30,
+      "medium_tail_end_hours": 48,
+      "terminal_h2_scarcity_buffer_max_kg": 75.0,
+      "terminal_h2_target_cap_kg": 720.0,
+      "terminal_h2_uncertainty_buffer_max_kg": 50.0,
+      "terminal_h2_value_penalty_rm_kg": 15.0,
+      "terminal_price_scale_rm_kwh": 0.05,
+      "terminal_soc_price_gain": 0.05,
+      "terminal_soc_surplus_gain": 0.04,
+      "terminal_soc_value_penalty_rm_kwh": 0.15,
+      "terminal_surplus_scale_kw": 1500.0,
+      "uq_green_derate_max": 0.85
+    }
+  },
+  "direct_renewable_h2_percent": 73.35097314306523,
+  "elapsed_seconds": 2054.859,
+  "frozen_model_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "frozen_workbook_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "grid_export_mwh": 257.6758776296382,
+  "grid_import_mwh": 3479.652723956557,
+  "grid_scenario": "base_export",
+  "hydrogen_demand_kg_day": 425.0,
+  "hydrogen_served_percent": 100.0,
+  "operating_cost_usd": 199485.65050462523,
+  "outputs_sha256": {
+    "physical_dispatch.csv.gz": "ada629ef099189291636f9a89d7dd30f0e0cbea35a6c1c9d3dda5b250fa049d6",
+    "solver_decisions.csv.gz": "b954af101566dc9bc8527cbd3f44cc931189722e86a5112905684ad33bc37f7f"
+  },
+  "protocol": "R1C7_DETERMINISTIC_UQ_TV_PRESPECIFIED_SENSITIVITY_V1",
+  "pv_exported_with_pem_headroom_mwh": 68.3800545165099,
+  "pv_to_pem_mwh": 1251.4409527938542,
+  "realized_adaptation_signals": {
+    "confidence": {
+      "count": 7008,
+      "max": 1.0,
+      "mean": 0.21062097991832016,
+      "min": 0.1969199348556867,
+      "std": 0.04894613089586415
+    },
+    "green_credit_derate": {
+      "count": 7008,
+      "max": 0.7,
+      "mean": 0.5815931469877481,
+      "min": 0.5795379902283531,
+      "std": 0.007341919634379619
+    },
+    "green_scarcity": {
+      "count": 7008,
+      "max": 1.0,
+      "mean": 0.14786630388876004,
+      "min": 0.0,
+      "std": 0.2901059469552335
+    },
+    "predicted_terminal_h2_kg": {
+      "count": 7008,
+      "max": 705.0706375370518,
+      "mean": 619.3612680530845,
+      "min": 595.0,
+      "std": 23.600528643156544
+    },
+    "terminal_h2_slack_kg": {
+      "count": 7008,
+      "max": 112.97863225328013,
+      "mean": 24.812348164970267,
+      "min": 0.0,
+      "std": 32.802092292791755
+    },
+    "terminal_h2_target_cap_binding_fraction": 0.0,
+    "terminal_h2_target_kg": {
+      "count": 7008,
+      "max": 710.1540032572157,
+      "mean": 644.1736162180545,
+      "min": 595.0,
+      "std": 23.91366834292623
+    },
+    "terminal_soc_target": {
+      "count": 7008,
+      "max": 0.5817036242734839,
+      "mean": 0.5491446252624155,
+      "min": 0.5104624893203504,
+      "std": 0.012251878810400206
+    },
+    "uncertainty_score": {
+      "count": 7008,
+      "max": 0.8030800651443133,
+      "mean": 0.7893790200816799,
+      "min": 0.0,
+      "std": 0.04894613089586415
+    }
+  },
+  "renewable_70pct_compliant": true,
+  "renewable_margin_percentage_points": 3.350973143065239,
+  "solver_decisions": 7008,
+  "solver_mean_time_ms": 23.563550456063105,
+  "solver_optimal": 7008,
+  "solver_unknown": 0,
+  "spec": {
+    "case": "DERATE_CAP_LOW",
+    "factor": "green_credit_upper_bound",
+    "level": 0.7,
+    "overrides": {
+      "uq_green_derate_max": 0.7
+    },
+    "tv_enabled": true,
+    "uq_enabled": true
+  },
+  "state_sha256": "3438b07d78ba6d7bc735244db52622c9a8cda34ce6f739bdd31e47a33013317a",
+  "status": "COMPLETED",
+  "technical_feasible": true
+}

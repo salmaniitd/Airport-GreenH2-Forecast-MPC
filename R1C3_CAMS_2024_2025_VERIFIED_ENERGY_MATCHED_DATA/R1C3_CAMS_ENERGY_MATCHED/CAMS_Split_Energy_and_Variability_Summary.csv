@@ -1,0 +1,4 @@
+Split,rows,nasa_MWh,cams_raw_MWh,cams_hourly_matched_MWh,cams_raw_difference_pct,mean_cams_reliability,low_reliability_below_half_5min,slots_with_positive_cams_zero_nasa,slots_with_positive_nasa_zero_cams
+Training_Data,147456,27112.7361,27961.6776,27112.7361,3.13115391,0.981064182,0,718,2730
+Development_Data,42048,7740.08855,8603.40325,7740.08855,11.1538091,0.98025352,0,80,757
+Final_Test_Data,21024,2898.36345,3062.95754,2898.36345,5.67886288,0.980964612,0,6,214

@@ -1,0 +1,11 @@
+﻿Manuscript_Figure,Content,Source_workbook_sheet,Current_embedded_width_inches,Embedded_pixel_width,Priority,Action
+Fig. 1,workflow,not covered by Excel plot script,6.27,2640,Medium,Dense arrow-chevron text; separate flowchart-editing task
+Fig. 2,hybrid architecture,not covered by Excel plot script,6.27,2638,Medium,Dense internal box text; check legibility at final page size
+Fig. 3,rule-based EMS,not covered by Excel plot script,6.24,2639,High,Decision-node text very small at manuscript size; separate vector redesign advisable
+Fig. 4,receding-horizon MPC,not covered by Excel plot script,5.07,2641,Medium,"Compact flowchart, many small labels"
+Fig. 5,forecast skill,Fig03_Forecast,6.27,2640,High,"Raise tick, axis, annotation and legend sizes"
+Fig. 6,controller cost–renewable trade-off,Fig04_Tradeoff,6.27,2638,High,"Enlarge annotations, clarify two different legends"
+Fig. 7,dispatch mechanisms,Fig05_Mechanism,6.27,2639,High,Enlarge panel titles and value labels; retain 4-panel hierarchy
+Fig. 8,weather-transition forecast & controller response,Fig06_Events_and_Prebuild,6.27,2640,High,Increase event tick and controller label size; reduce cramped legend
+Fig. 9,physical renewable ceiling,Fig07_Physical_and_Realised,6.27,2638,High,"Raise target and group legend readability, keep percentage-point units"
+Fig. 10,PEM capacity sensitivity,Fig08_PEM,6.27,2640,High,Enlarge data labels; label screening LCOH explicitly

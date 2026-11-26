@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "timestamp_rounding_test": true,
+  "dswrf_deaveraging_test": true,
+  "centered_dswrf_test": true,
+  "local_scale_calibration_test": true,
+  "solar_geometry_test": true,
+  "availability_delay_test": true,
+  "selfcheck_timestamp_max_correction_s": 0.288
+}

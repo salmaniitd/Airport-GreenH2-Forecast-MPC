@@ -1,0 +1,11 @@
+{
+  "beta_0p60_reproduced_direct_h2_percent": 73.35097314306523,
+  "beta_0p60_reproduced_operating_cost_usd": 199485.65050462523,
+  "cost_difference_usd": 0.0,
+  "cost_tolerance_usd": 1.0,
+  "green_tolerance_percentage_points": 0.02,
+  "passed": true,
+  "published_direct_h2_percent": 73.35097314306523,
+  "published_operating_cost_usd": 199485.65050462523,
+  "renewable_difference_percentage_points": 0.0
+}

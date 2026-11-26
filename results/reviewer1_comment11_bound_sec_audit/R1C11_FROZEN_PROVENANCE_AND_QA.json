@@ -1,0 +1,70 @@
+{
+  "protocol": "R1C11_Boundary_Assumption_Audit_v1.0",
+  "created_utc": "2026-11-19T01:21:08+00:00",
+  "stress_archive": {
+    "stress_archive_path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\results\\stress\\dispatch\\stress_1_weather\\Hybrid-GFS-UQ-MT-MPC-72h-TV_dispatch.csv.gz",
+    "stress_archive_git_blob_sha1": "487ec297c152bbcf46bcda56ab4fffac94b62aa3",
+    "stress_archive_sha256": "de97d740a1825ddf37055d15d19cd9291c3bdf7f0162d358aaf1fb230152c6fc",
+    "stress_archive_bytes": 2711827
+  },
+  "source_provenance": {
+    "frozen_core_sha256_expected": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+    "master_sha256_expected": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+    "core_local_path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\code\\simulation\\RLEMS_Airport_GreenH2_ECM_HybridGFS72_Publication_v1_6_5_CLEAN_RUNTIME_FIX.py",
+    "core_present": true,
+    "core_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+    "master_workbook_local_path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\data\\input\\KotaBharu_Airport_Master_5min_2024_2025_SCRIPT_READY.xlsx",
+    "master_workbook_present": true,
+    "master_workbook_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd"
+  },
+  "science_checks": {
+    "source_timesteps": 21024,
+    "duration_days": 73.0,
+    "pv_residual_limited_by_4mw_mwh": 1318.971060935,
+    "nominal_original_green_h2_potential_kg": 23981.292017,
+    "min_load_fraction": 0.1,
+    "min_load_kw": 400.0,
+    "steps_with_direct_residual_below_min_load": 368,
+    "direct_residual_energy_below_min_mwh": 6.431028648333333,
+    "curve_10pct_direct_only_potential_kg": 24133.186926596172,
+    "curve_direct_only_minus_nominal_kg": 151.8949095961725,
+    "published_physical_resource_bound_460_pct": 71.41540207564026,
+    "original_nominal_demand_limit_kg_day": 469.3012136399218,
+    "ramp_up_kw_per_5min_from_pem_assumption": 120000.0,
+    "ramp_down_kw_per_5min_from_pem_assumption": 480000.0,
+    "ramp_is_nonbinding_at_5min_if_these_rates_apply": true,
+    "green_source_definition": "Residual PV after concurrent airport load, direct PV-to-PEM only; battery discharge is not green.",
+    "curve_status": "study-specific literature-informed sensitivity, not a vendor-calibrated guarantee",
+    "dynamic_feasibility_status": "none of these energy sums proves a feasible coupled hydrogen/storage/scheduling trajectory",
+    "existing_controller_feasible_point": "rule-based and Causal MPC achieved >=70% at 460 kg/day under original fixed SEC stress test",
+    "existing_controller_noncompliant_point": "all four tested controllers failed 70% at 465 kg/day in the separate reported boundary sweep"
+  },
+  "PEM_SEC_curve": {
+    "load_fractions": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "sec_kwh_per_kg": [
+      58.5,
+      54.0,
+      52.5,
+      53.5,
+      55.0
+    ],
+    "minimum_load_fraction": 0.1,
+    "minimum_load_kw": 400.0
+  },
+  "audited_demand_kg_day": [
+    450.0,
+    460.0,
+    465.0,
+    468.0,
+    469.0,
+    470.0,
+    475.0,
+    500.0
+  ]
+}

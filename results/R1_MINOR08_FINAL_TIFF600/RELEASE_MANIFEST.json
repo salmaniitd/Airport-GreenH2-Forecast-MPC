@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "scope": "Format/readability only; no model rerun or numerical change",
+  "input_plotter": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\code\\figures\\ECM_Figures_3_to_9_From_Excel_FINAL_REPRO.py",
+  "input_workbook": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\results\\source_data\\ECM_Figures_3_to_9_Source_Data_FINAL_REPRO.xlsx",
+  "frozen_input_sha256": {
+    "plotter": "eb1e61b6b222e63ab0b2149b4a2b9793154dee0fd5d8e8a3718e65d70465c613",
+    "workbook": "b681ff36faa7cba1486cd4c656b6f62b44ce580d300edf0cf39a16956295cd26"
+  },
+  "revised_plotter_sha256": "5b2dc449e54c4bf34b0892eda4c609fad2be693df481c70ea1ac0ad20e321a87",
+  "visual_patches": [
+    "export_label_x = -export_max * 1.58 => export_label_x = -export_max * 1.05"
+  ],
+  "config_sha256": "50ff489ec1f6ce708c83206f98d5b9c309b65e8bae3d5013888475b8d79c1c73",
+  "figures": [
+    {
+      "filename": "Manuscript_Fig05_Forecast_Skill_600dpi.tif",
+      "dpi_x": 600.0,
+      "dpi_y": 600.0,
+      "width_pixels": 4515,
+      "height_pixels": 2631,
+      "mode": "RGB",
+      "compression": "LZW lossless",
+      "size_mb": 0.955,
+      "sha256": "15194bab9678a74454f3d3aa1ecfef19bcaf0ab24f2f4168398a0b4ddc64c8b5",
+      "original_script_figure": "03",
+      "manuscript_figure": 5
+    },
+    {
+      "filename": "Manuscript_Fig06_Cost_Renewable_Tradeoff_600dpi.tif",
+      "dpi_x": 600.0,
+      "dpi_y": 600.0,
+      "width_pixels": 4521,
+      "height_pixels": 3041,
+      "mode": "RGB",
+      "compression": "LZW lossless",
+      "size_mb": 0.72,
+      "sha256": "29656555269a1ad644eb7129f450457e6916d8ee2d96152859aa7396ec6e2360",
+      "original_script_figure": "04",
+      "manuscript_figure": 6
+    },
+    {
+      "filename": "Manuscript_Fig07_Dispatch_Mechanism_600dpi.tif",
+      "dpi_x": 600.0,
+      "dpi_y": 600.0,
+      "width_pixels": 5112,
+      "height_pixels": 3655,
+      "mode": "RGB",
+      "compression": "LZW lossless",
+      "size_mb": 1.212,
+      "sha256": "ebbfe8886d82b2d8c233b11113486854adae6467adca429b0aadb4bcdc359b17",
+      "original_script_figure": "05",
+      "manuscript_figure": 7
+    },
+    {
+      "filename": "Manuscript_Fig08_Weather_Events_600dpi.tif",
+      "dpi_x": 600.0,
+      "dpi_y": 600.0,
+      "width_pixels": 5096,
+      "height_pixels": 3246,
+      "mode": "RGB",
+      "compression": "LZW lossless",
+      "size_mb": 1.202,
+      "sha256": "6e836237f029bf99ab107f298880f9896dd20e85c938144177b4cc7d676914a2",
+      "original_script_figure": "06",
+      "manuscript_figure": 8
+    },
+    {
+      "filename": "Manuscript_Fig09_Renewable_Hydrogen_Envelope_600dpi.tif",
+      "dpi_x": 600.0,
+      "dpi_y": 600.0,
+      "width_pixels": 4521,
+      "height_pixels": 3655,
+      "mode": "RGB",
+      "compression": "LZW lossless",
+      "size_mb": 1.143,
+      "sha256": "26a3fdc21c47c69d74d6fa5d31fe416e7c9602745089faa058428af7e6c74b93",
+      "original_script_figure": "07",
+      "manuscript_figure": 9
+    },
+    {
+      "filename": "Manuscript_Fig10_PEM_Capacity_600dpi.tif",
+      "dpi_x": 600.0,
+      "dpi_y": 600.0,
+      "width_pixels": 4520,
+      "height_pixels": 2894,
+      "mode": "RGB",
+      "compression": "LZW lossless",
+      "size_mb": 1.003,
+      "sha256": "d7ae96455ca083bc486c7d66f7a4ce6d623601b6bde91623196db9576a7dc90a",
+      "original_script_figure": "08",
+      "manuscript_figure": 10
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "scientific_status": "PASS_FOR_DATA_PREPARATION_NOT_CONTROLLER_VALIDATION",
+  "CAMS_origin": "CAMS Radiation Service v4.6 all-sky satellite-derived irradiance (not onsite field measurements)",
+  "CAMS_source_1min_rows_prior_audit": 1052640,
+  "CAMS_edge_recovered_1min_rows": 480,
+  "complete_1min_source_derived_rows": 1052640,
+  "complete_two_year_MYT_1min_rows": 1052640,
+  "complete_5min_rows": 210528,
+  "complete_MYT_hours": 17544,
+  "2024_2025_NASA_baseline_workbook_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "NASA_extracted_PV_sha256": "4d7cd2a836ba3c36accb7d8b34dee8c7837e0c89d8beab7a061524c4ae974313",
+  "CAMS_2023_edge_csv_sha256": "e07b59f5596501ed41ad6504d86f508f17bb98182d49193a8e29dfea77a8fb1e",
+  "CAMS_2024_2025_original_csv_sha256": "e24a73e434c92ec80cb42c74a6e230530e4c9e7c58b3ed6dcd2d2eda85af23c5",
+  "NASA_total_PV_MWh": 37751.18807043,
+  "CAMS_raw_total_PV_MWh": 39628.03835796,
+  "CAMS_hourly_matched_total_PV_MWh": 37751.18807043,
+  "CAMS_original_energy_difference_pct": 4.971632373604984,
+  "max_abs_hourly_energy_error_kWh": 4.547473508864641e-12,
+  "sum_abs_hourly_energy_error_kWh": 3.8458782825046e-09,
+  "scale_and_12MW_cap_redistribution_hours": 109,
+  "NASA_zero_hour_CAMS_raw_positive_hours": 311,
+  "NASA_positive_hour_CAMS_raw_zero_hours": 0,
+  "source_5min_CAMS_zero_NASA_positive_cells": 3701,
+  "source_5min_CAMS_positive_NASA_zero_cells": 804,
+  "normalization_note": "Each 12-cell MYT hour matched exactly to NASA model PV energy. CAMS intrahour relative shape preserved by monotone scaling except explicit 12MW saturation; CAMS zero remains zero. Hourly matching cannot independently reproduce irradiance magnitudes or validate ground measurements.",
+  "important_hour_boundary_caution": "Independent per-hour matching can produce discontinuous hourly scale factors and hence artificially enlarged 5-minute ramps across hour boundaries. This is a normalization artifact, not measured cloud variability. Quantified separately from within-hour ramps; report both and consider a complementary unmatched CAMS comparison.",
+  "ramp_quality_by_split": [
+    {
+      "Split": "Training_Data",
+      "Input": "Frozen NASA",
+      "Intra_hour_5min_ramp_p99_kW": 326.8695263999998,
+      "Hour_boundary_5min_ramp_p99_kW": 261.81155999999964,
+      "Intra_hour_5min_ramp_max_kW": 1156.9523399999998,
+      "Hour_boundary_5min_ramp_max_kW": 699.2773199999999,
+      "All_5min_ramp_p99_kW": 324.3281555999996
+    },
+    {
+      "Split": "Training_Data",
+      "Input": "CAMS original",
+      "Intra_hour_5min_ramp_p99_kW": 1021.7172311999987,
+      "Hour_boundary_5min_ramp_p99_kW": 1133.3197151999968,
+      "Intra_hour_5min_ramp_max_kW": 4105.602000000001,
+      "Hour_boundary_5min_ramp_max_kW": 3051.87264,
+      "All_5min_ramp_p99_kW": 1032.8582015999996
+    },
+    {
+      "Split": "Training_Data",
+      "Input": "CAMS hourly energy-matched",
+      "Intra_hour_5min_ramp_p99_kW": 1296.2612513796007,
+      "Hour_boundary_5min_ramp_p99_kW": 3544.108804738339,
+      "Intra_hour_5min_ramp_max_kW": 7497.287367676266,
+      "Hour_boundary_5min_ramp_max_kW": 9290.924055313622,
+      "All_5min_ramp_p99_kW": 1611.8522928885372
+    },
+    {
+      "Split": "Development_Data",
+      "Input": "Frozen NASA",
+      "Intra_hour_5min_ramp_p99_kW": 321.5705142,
+      "Hour_boundary_5min_ramp_p99_kW": 263.14892279999987,
+      "Intra_hour_5min_ramp_max_kW": 596.5204800000001,
+      "Hour_boundary_5min_ramp_max_kW": 405.27455999999984,
+      "All_5min_ramp_p99_kW": 317.92012800000026
+    },
+    {
+      "Split": "Development_Data",
+      "Input": "CAMS original",
+      "Intra_hour_5min_ramp_p99_kW": 774.4855104000002,
+      "Hour_boundary_5min_ramp_p99_kW": 865.4309135999998,
+      "Intra_hour_5min_ramp_max_kW": 3432.7569599999997,
+      "Hour_boundary_5min_ramp_max_kW": 3459.89304,
+      "All_5min_ramp_p99_kW": 782.4427344000009
+    },
+    {
+      "Split": "Development_Data",
+      "Input": "CAMS hourly energy-matched",
+      "Intra_hour_5min_ramp_p99_kW": 813.132169906786,
+      "Hour_boundary_5min_ramp_p99_kW": 2666.755412518778,
+      "Intra_hour_5min_ramp_max_kW": 6569.2642885177775,
+      "Hour_boundary_5min_ramp_max_kW": 8293.95628789927,
+      "All_5min_ramp_p99_kW": 1073.7259873301523
+    },
+    {
+      "Split": "Final_Test_Data",
+      "Input": "Frozen NASA",
+      "Intra_hour_5min_ramp_p99_kW": 295.74562380000003,
+      "Hour_boundary_5min_ramp_p99_kW": 234.53625000000005,
+      "Intra_hour_5min_ramp_max_kW": 535.9538999999995,
+      "Hour_boundary_5min_ramp_max_kW": 427.11582,
+      "All_5min_ramp_p99_kW": 293.18447519999967
+    },
+    {
+      "Split": "Final_Test_Data",
+      "Input": "CAMS original",
+      "Intra_hour_5min_ramp_p99_kW": 887.1577704000039,
+      "Hour_boundary_5min_ramp_p99_kW": 986.7031199999998,
+      "Intra_hour_5min_ramp_max_kW": 3307.02768,
+      "Hour_boundary_5min_ramp_max_kW": 2919.2522400000003,
+      "All_5min_ramp_p99_kW": 891.9234143999975
+    },
+    {
+      "Split": "Final_Test_Data",
+      "Input": "CAMS hourly energy-matched",
+      "Intra_hour_5min_ramp_p99_kW": 1092.97592080561,
+      "Hour_boundary_5min_ramp_p99_kW": 2975.113243428497,
+      "Intra_hour_5min_ramp_max_kW": 5258.464048404427,
+      "Hour_boundary_5min_ramp_max_kW": 7899.119268406985,
+      "All_5min_ramp_p99_kW": 1383.548682377337
+    }
+  ],
+  "matched_PV_slots_at_12MW_cap": 249,
+  "solar_conversion": "Five consecutive 1-minute GHI irradiation values (Wh/m2) summed to 5-min energy, multiplied by 12 to form interval-mean W/m2; PV (kW)=GHI*10.2 capped 12MW.",
+  "split_stats": {
+    "Training_Data": {
+      "rows": 147456,
+      "nasa_MWh": 27112.736067755,
+      "cams_raw_MWh": 27961.677564539998,
+      "cams_hourly_matched_MWh": 27112.736067755,
+      "cams_raw_difference_pct": 3.131153914763485,
+      "nasa_ramps_5min_p95_p99_max_kw": [
+        233.65262,
+        324.32816,
+        1156.95234
+      ],
+      "cams_raw_ramps_5min_p95_p99_max_kw": [
+        469.62432,
+        1032.8582,
+        4105.602
+      ],
+      "cams_matched_ramps_5min_p95_p99_max_kw": [
+        617.0844,
+        1611.85229,
+        9290.92406
+      ],
+      "mean_cams_reliability": 0.9810641818576388,
+      "low_reliability_below_half_5min": 0,
+      "slots_with_positive_cams_zero_nasa": 718,
+      "slots_with_positive_nasa_zero_cams": 2730
+    },
+    "Development_Data": {
+      "rows": 42048,
+      "nasa_MWh": 7740.088548119999,
+      "cams_raw_MWh": 8603.403252420001,
+      "cams_hourly_matched_MWh": 7740.088548119999,
+      "cams_raw_difference_pct": 11.153809144853932,
+      "nasa_ramps_5min_p95_p99_max_kw": [
+        227.05057,
+        317.92013,
+        596.52048
+      ],
+      "cams_raw_ramps_5min_p95_p99_max_kw": [
+        394.73633,
+        782.44273,
+        3459.89304
+      ],
+      "cams_matched_ramps_5min_p95_p99_max_kw": [
+        440.18622,
+        1073.72599,
+        8293.95629
+      ],
+      "mean_cams_reliability": 0.9802535197869101,
+      "low_reliability_below_half_5min": 0,
+      "slots_with_positive_cams_zero_nasa": 80,
+      "slots_with_positive_nasa_zero_cams": 757
+    },
+    "Final_Test_Data": {
+      "rows": 21024,
+      "nasa_MWh": 2898.363454555,
+      "cams_raw_MWh": 3062.9575409999998,
+      "cams_hourly_matched_MWh": 2898.363454555,
+      "cams_raw_difference_pct": 5.678862883339497,
+      "nasa_ramps_5min_p95_p99_max_kw": [
+        200.64706,
+        293.18448,
+        535.9539
+      ],
+      "cams_raw_ramps_5min_p95_p99_max_kw": [
+        422.86018,
+        891.92341,
+        3307.02768
+      ],
+      "cams_matched_ramps_5min_p95_p99_max_kw": [
+        526.08893,
+        1383.54868,
+        7899.11927
+      ],
+      "mean_cams_reliability": 0.9809646118721462,
+      "low_reliability_below_half_5min": 0,
+      "slots_with_positive_cams_zero_nasa": 6,
+      "slots_with_positive_nasa_zero_cams": 214
+    }
+  },
+  "checks": {
+    "original_NASA_sha256_frozen_verified": true,
+    "no_missing_CAMS_5min_slots": true,
+    "total_5min_rows_exact": true,
+    "timestamp_alignment_exact": true,
+    "GHI_and_PV_consistent": true,
+    "hourly_energy_match_tolerance_1e-5_kWh": true,
+    "matched_PV_within_12MW_cap": true,
+    "CAMS_20231231_edge_recovered_without_imputation": true,
+    "CAMS_no_reliability_below_half": true,
+    "split_512_146_73_days": true
+  },
+  "experiment_status": "DATA READY. No controller rerun, no forecast retraining, no manuscript performance claims.",
+  "simulation_requirement": "Construct copy of frozen input workbook with PV and irradiance replaced on each of three splits; run complete model with explicit --allow-input-mismatch in separate results directories; preserve original 2024-25 workbook and frozen results."
+}

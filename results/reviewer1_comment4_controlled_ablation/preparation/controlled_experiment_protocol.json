@@ -1,0 +1,63 @@
+{
+  "chronological_days": {
+    "development": 146,
+    "held_out_test": 73,
+    "training": 512
+  },
+  "common_state_sha256": "3438b07d78ba6d7bc735244db52622c9a8cda34ce6f739bdd31e47a33013317a",
+  "developer_calibration_used_test_data": false,
+  "distinct_from_published_controller": "Published 72h TV/UQ controller uses terminal-value and uncertainty adjustments. Disabled in this common-optimizer ablation for fair comparison.",
+  "evaluation_days": 73,
+  "factorial_design": {
+    "GFS_24": "ET 0-6h, ET+issued GFS 6-24h; 24h",
+    "GFS_72": "V1.6.5 issued-GFS hybrid PV 0-72h; 72h",
+    "LOCAL_24": "ET 0-24h; no GFS; 24h",
+    "LOCAL_72": "ET 0-24h, causal weekly lag PV/load 24-72h; no GFS; 72h"
+  },
+  "forecast_training_all_days": 512,
+  "frozen_model_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "frozen_nasa_workbook_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "gfs_local_scales": {
+    "12.0": 0.876849,
+    "18.0": 0.880311637215919,
+    "24.0": 0.861546,
+    "30.0": 0.8915875090609856,
+    "36.0": 0.8777463093847909,
+    "42.0": 0.9085420871277539,
+    "48.0": 0.903154565904679,
+    "54.0": 0.8925747791230313,
+    "6.0": 0.878278,
+    "60.0": 0.8920163531915964,
+    "66.0": 0.9199454901574332,
+    "72.0": 0.8875135891917009,
+    "78.0": 0.8865251052039106,
+    "84.0": 0.8936506532301899
+  },
+  "gfs_selected_blend_weights": {
+    "24_48h": 0.6,
+    "48_72h": 0.6
+  },
+  "gfs_source_cache_sha256": {
+    "gfs_development_f006_f084.csv": "7a4d33e9077b832b3d7c808ff5da7c27022214266b831cdca342e21337245dae",
+    "gfs_final_test_f006_f084.csv": "0fb6157792ccfb1251d702ceef213e784e78ee59ef6046d1dbb41859e6f3cfde"
+  },
+  "optimization_contract": {
+    "control_step_minutes": 15,
+    "fixed_terminal_h2_kg": 595.0,
+    "fixed_terminal_soc_target": 0.55,
+    "green_credit_derate": 0.55,
+    "green_slack_penalty_rm_kg": 10000.0,
+    "identical_model": "Frozen V1.6.5 MultiTimescaleExtraTreesMPCController",
+    "physical_sim_step_minutes": 5,
+    "planning_slot_policy": "15 min within first 24 h, then 30 min at 24-48 h, then 60 min at 48-72 h; identical policy for all variants",
+    "same_initial_and_terminal_conditions_all_variants": true,
+    "same_optimization_objective_constraints_penalties_all_variants": true,
+    "terminal_h2_penalty_rm_kg": 10.0,
+    "terminal_soc_penalty_rm_kwh": 0.002,
+    "terminal_value_enabled_all_variants": false,
+    "uncertainty_adaptation_enabled_all_variants": false
+  },
+  "prepared_utc": "2026-11-18T04:07:36+00:00",
+  "protocol": "R1C4_COMMON_OPTIMIZER_2X2_FACTORIAL_V1",
+  "smoke_test_only": false
+}

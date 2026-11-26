@@ -1,3 +1,32 @@
+## Peer-review revision evidence
+
+Additional numerical experiments and validation audits conducted during manuscript revision are available in the following directories:
+
+| Investigation | Results directory |
+|---|---|
+| Airport load sensitivity (±10%) | `results/reviewer1_comment2_load_sensitivity/` |
+| NASA POWER–CAMS solar sensitivity | `results/reviewer1_comment3_cams_controller_experiment/` |
+| Controlled 2×2 ablation | `results/reviewer1_comment4_controlled_ablation/` |
+| GFS blending sensitivity | `results/reviewer1_comment5_gfs_blending_sensitivity/` |
+| Dispatch-relevant forecast evaluation | `results/reviewer1_comment6_dispatch_relevant_forecast/` |
+| Uncertainty and terminal-value sensitivity | `results/reviewer1_comment7_uq_terminal_sensitivity/` |
+| Soft renewable constraint analysis | `results/reviewer1_comment8_soft_green_constraint_audit/` |
+| Electricity export and hydrogen objective | `results/reviewer1_comment9_export_objective_audit/` |
+| Physical renewable bound and SEC | `results/reviewer1_comment11_bound_sec_audit/` |
+| LP–PEM consistency | `results/reviewer1_comment12_lp_pem_consistency/` |
+| Causal MPC infeasibility investigation | `results/REVIEWER1_MINOR06_8MW_FORENSIC_AUDIT/` |
+| Revised publication figures | `results/R1_MINOR08_FINAL_TIFF600/` |
+
+The corresponding Python scripts are provided in the repository root. The original frozen scientific model and reference results remain unchanged. Both favourable and unfavourable experimental findings are retained for scientific transparency.
+
+### CAMS data attribution
+
+Contains modified Copernicus Atmosphere Monitoring Service (CAMS) solar radiation time-series data, distributed under CC BY 4.0 (DOI: 10.24381/5cab0912). The processed data were temporally aggregated and energy-matched against the frozen NASA POWER-based profiles for the supplementary sensitivity investigation.
+
+## Repository status
+
+This repository supports independent verification of the original study and its peer-review revisions.
+
 # Forecast Uncertainty-Aware MPC for Renewable Hydrogen Production in Airport Microgrids
 
 This repository contains the frozen reproducibility package for an airport microgrid study evaluating causal multi-horizon forecasting and four energy-management strategies: Rule-Based EMS, Causal MPC, ExtraTrees-MPC-24h, and Hybrid GFS-MPC-72h for direct-renewable hydrogen production.
@@ -130,6 +159,6 @@ The study uses a 5-min chronological 2024-2025 corpus. Weather is reconstructed 
 
 `validation/provenance/` preserves run manifests, GFS runtime/calibration manifests and data provenance. `validation/checks/` preserves scientific checks, solver summaries and input/cost audits. These should be inspected together with the frozen result tables rather than relying only on rendered figures.
 
-## Repository status
 
-This repository is intended to remain private during peer review. Public release, archival DOI integration and licensing can be added after manuscript acceptance.
+
+

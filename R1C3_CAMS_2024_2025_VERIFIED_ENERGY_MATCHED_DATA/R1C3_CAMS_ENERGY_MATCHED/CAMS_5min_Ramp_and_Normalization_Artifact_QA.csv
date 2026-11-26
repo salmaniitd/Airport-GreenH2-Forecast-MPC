@@ -1,0 +1,10 @@
+Split,Input,Intra_hour_5min_ramp_p99_kW,Hour_boundary_5min_ramp_p99_kW,Intra_hour_5min_ramp_max_kW,Hour_boundary_5min_ramp_max_kW,All_5min_ramp_p99_kW
+Training_Data,Frozen NASA,326.869526,261.81156,1156.95234,699.27732,324.328156
+Training_Data,CAMS original,1021.71723,1133.31972,4105.602,3051.87264,1032.8582
+Training_Data,CAMS hourly energy-matched,1296.26125,3544.1088,7497.28737,9290.92406,1611.85229
+Development_Data,Frozen NASA,321.570514,263.148923,596.52048,405.27456,317.920128
+Development_Data,CAMS original,774.48551,865.430914,3432.75696,3459.89304,782.442734
+Development_Data,CAMS hourly energy-matched,813.13217,2666.75541,6569.26429,8293.95629,1073.72599
+Final_Test_Data,Frozen NASA,295.745624,234.53625,535.9539,427.11582,293.184475
+Final_Test_Data,CAMS original,887.15777,986.70312,3307.02768,2919.25224,891.923414
+Final_Test_Data,CAMS hourly energy-matched,1092.97592,2975.11324,5258.46405,7899.11927,1383.54868

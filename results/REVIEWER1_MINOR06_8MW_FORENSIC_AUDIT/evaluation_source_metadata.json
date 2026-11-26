@@ -1,0 +1,21 @@
+{
+  "role": "final_test",
+  "classification": "chronological_2025_final_unseen_test_partition_5min",
+  "path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\python_modelling_7\\KotaBharu_Airport_Master_5min_2024_2025_SCRIPT_READY.xlsx",
+  "sheet_name": "Final_Test_Data",
+  "sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "rows": 21024,
+  "days": 73,
+  "timestamp_start": "2025-10-20T00:00:00",
+  "timestamp_end": "2025-12-31T23:55:00",
+  "interval_minutes": 5.0,
+  "load_source_column": "Load_kW_5min",
+  "load_unit_input": "kw",
+  "load_unit_internal": "kW",
+  "pv_source": "PV_Available_12MW_PR085_kW",
+  "price_source_column": "Grid_Import_Effective_RM_kWh",
+  "time_source_column": "Timestamp_MYT",
+  "missing_core_values": 0,
+  "duplicate_timestamps": 0,
+  "source_note": "Weather is reconstructed from hourly NASA POWER data; the two-year load trajectory is synthetic/materialized from the available airport load corpus."
+}

@@ -1,0 +1,12 @@
+{
+  "step_index": 16497,
+  "solver_method": "highs",
+  "solver_presolve": true,
+  "first_solver_status": 2,
+  "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+  "variables": 1063,
+  "equality_rows": 292,
+  "inequality_rows": 291,
+  "matrix_is_exact_unmodified_frozen_core": true,
+  "diagnostic_reoptimizations_are_NOT_publication_dispatch": true
+}

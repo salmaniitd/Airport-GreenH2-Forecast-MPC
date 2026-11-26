@@ -1,0 +1,9 @@
+model_component,original_lp_contribution,dispatch_interpretation
+Grid electricity imports,+ electricity tariff * imported kWh,"Positive dispatch cost, importing more is discouraged."
+Electricity exports,- electricity tariff * sell_factor * exported kWh,"Negative objective coefficient: exports earn revenue, lowering objective."
+BESS charge/discharge,+ degradation cost coefficient * throughput kWh,Penalizes battery cycling.
+Hydrogen produced,No independent positive sales-revenue or renewable-H2 reward term,"Production is driven by demand/inventory and renewable constraints, not a direct H2-sales objective."
+Renewable-H2 shortfall slack,+ RM 10000/kg * nonnegative per-solve slack,"High penalty, but LP green constraint is SOFT. Cannot multiply slack across all solves for cash cost."
+Terminal H2 inventory deviation,+ RM 15/kg * target deviation (when terminal value enabled),"Avoids planned terminal H2 target deviations, but is not a per-step sales benefit."
+Terminal SOC deviation,+ RM 0.15/kWh * target deviation (when terminal value enabled),Discourages terminal battery SOC target deviations.
+Forecasted renewable credit,0.55–0.85 fractional credit applied in planning constraint,Conservative planned green attribution; not an objective reward and not actual measured PV-to-PEM.

@@ -1,0 +1,17 @@
+{
+  "source": "NOAA NODD AWS noaa-gfs-bdp-pds",
+  "test_lead_h": 6,
+  "network_ok": true,
+  "decoder_ok": true,
+  "centered_dswrf_ok": true,
+  "ok": true,
+  "decoder_version": "2.48.0",
+  "sample_dswrf_before_1h_wm2": 9.216000000000001,
+  "sample_dswrf_after_1h_wm2": 65.1,
+  "sample_dswrf_centered_wm2": 37.158,
+  "sample_current_var": "653:472899379:d=2025052618:DSWRF:surface:0-6 hour ave fcst:",
+  "sample_previous_var": "653:473346435:d=2025052618:DSWRF:surface:0-5 hour ave fcst:",
+  "sample_next_var": "653:474834853:d=2025052618:DSWRF:surface:6-7 hour ave fcst:",
+  "sample_tcdc_pct": 90.60000000000001,
+  "sample_temp2m_c": 25.150000000000034
+}
