@@ -1,0 +1,7 @@
+﻿scenario,load_scale,h2_demand_kg_day,evaluation_period,maximum_direct_pv_h2_kg,required_net_h2_production_kg,optimistic_green_h2_fraction_pct,resource_bound_at_least_70pct,interpretation
+minus10pct,0.9,425.0,Final_Test (2025-10-20 to 2025-12-31),25147.77438374545,31020.0,81.06954991536251,True,Necessary optimistic bound; not controller/dynamic feasibility proof
+minus10pct,0.9,460.0,Final_Test (2025-10-20 to 2025-12-31),25147.77438374545,33575.0,74.90029600519867,True,Necessary optimistic bound; not controller/dynamic feasibility proof
+reference0pct,1.0,425.0,Final_Test (2025-10-20 to 2025-12-31),23981.292017,31020.0,77.30912964861379,True,Necessary optimistic bound; not controller/dynamic feasibility proof
+reference0pct,1.0,460.0,Final_Test (2025-10-20 to 2025-12-31),23981.292017,33575.0,71.42603728071481,True,Necessary optimistic bound; not controller/dynamic feasibility proof
+plus10pct,1.1,425.0,Final_Test (2025-10-20 to 2025-12-31),22819.25830710909,31020.0,73.56305063542582,True,Necessary optimistic bound; not controller/dynamic feasibility proof
+plus10pct,1.1,460.0,Final_Test (2025-10-20 to 2025-12-31),22819.25830710909,33575.0,67.96502846495633,False,Necessary optimistic bound; not controller/dynamic feasibility proof

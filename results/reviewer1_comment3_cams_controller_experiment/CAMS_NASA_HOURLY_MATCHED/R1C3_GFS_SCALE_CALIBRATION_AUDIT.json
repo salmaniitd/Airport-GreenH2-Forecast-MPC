@@ -1,0 +1,37 @@
+{
+  "calibration_partition": "Development-A / Tune only",
+  "controller_cost_used_for_calibration": false,
+  "core_model_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "evaluation_partition": "Development-B / Confirm only",
+  "experiment_protocol_revision": "R1C3_CAMS_MATCHED_ONLY_PARALLEL_V3",
+  "final_test_used_for_calibration": false,
+  "frozen_hybrid_alpha_unchanged": {
+    "12.0": 0.4,
+    "24.0": 0.5,
+    "6.0": 0.5
+  },
+  "frozen_reference_anchors_used": [],
+  "published_nasa_v3_scales": {
+    "12.0": 0.876849,
+    "24.0": 0.861546,
+    "6.0": 0.878278
+  },
+  "scenario": "CAMS_NASA_HOURLY_MATCHED",
+  "scenario_specific_gfs_scales_by_lead_h": {
+    "12.0": 0.899899878469381,
+    "18.0": 0.8983140857401942,
+    "24.0": 0.8844265125870976,
+    "30.0": 0.9075383730941299,
+    "36.0": 0.8958750023267796,
+    "42.0": 0.9270097827835553,
+    "48.0": 0.9217206963555259,
+    "54.0": 0.9116623116526219,
+    "6.0": 0.8979261142675039,
+    "60.0": 0.9105840268049304,
+    "66.0": 0.9354631309148691,
+    "72.0": 0.9038398336490906,
+    "78.0": 0.9020932131869696,
+    "84.0": 0.9094824003960856
+  },
+  "scope": "NASA anchor reproduction retained for NASA only; CAMS GFS scales tuned on Development-A"
+}

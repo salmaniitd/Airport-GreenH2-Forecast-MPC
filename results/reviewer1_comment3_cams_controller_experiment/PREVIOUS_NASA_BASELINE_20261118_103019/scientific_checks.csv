@@ -1,0 +1,9 @@
+check,passed,detail
+ExtraTrees future-leakage test,True,future actual perturbation does not alter causal features
+48h slot contract,True,slots=144 expected=144
+72h slot contract,True,slots=168 expected=168
+Direct-PV green-H2 accounting,True,PV serves load first; only simultaneous residual PV credits PEM
+Training 5-minute chronology,True,rows=147456; interval=5 min
+Development 5-minute chronology,True,rows=42048; interval=5 min
+Final_Test 5-minute chronology,True,rows=21024; interval=5 min
+Chronological partition order,True,train_end=2025-05-26 23:55:00; dev_start=2025-05-27 00:00:00; dev_end=2025-10-19 23:55:00; test_start=2025-10-20 00:00:00

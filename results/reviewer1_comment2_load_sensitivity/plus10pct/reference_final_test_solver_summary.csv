@@ -1,0 +1,13 @@
+experiment,grid_scenario,evaluation_period,development_campaign,h2_demand_rate_kg_day,controller,solver_decisions,optimal_decisions,feasible_unknown_accepted,solver_retries,mean_solve_time_ms,p95_solve_time_ms,max_solve_time_ms,publication_solver_gate
+reference_final_test,base_export,Final_Test,Final_Test,425.0,Rule-Based EMS,0,0,0,0,,,,True
+reference_final_test,base_export,Final_Test,Final_Test,425.0,Causal MPC,7008,7008,0,0,8.915238327648545,14.478955004597081,33.901499991770834,True
+reference_final_test,base_export,Final_Test,Final_Test,425.0,ExtraTrees-MPC-24h,7008,7008,0,0,8.960604737291831,9.604800006491132,15.205000003334135,True
+reference_final_test,base_export,Final_Test,Final_Test,425.0,Hybrid-GFS-UQ-MT-MPC-72h-TV,7008,7008,0,0,12.882042323176954,14.74701000843197,28.441099973861128,True
+reference_final_test,limited_export,Final_Test,Final_Test,425.0,Rule-Based EMS,0,0,0,0,,,,True
+reference_final_test,limited_export,Final_Test,Final_Test,425.0,Causal MPC,7008,7008,0,0,8.581513455930988,13.82664498523809,49.935200018808246,True
+reference_final_test,limited_export,Final_Test,Final_Test,425.0,ExtraTrees-MPC-24h,7008,7008,0,0,9.110398773111527,9.735084971180184,14.497800031676888,True
+reference_final_test,limited_export,Final_Test,Final_Test,425.0,Hybrid-GFS-UQ-MT-MPC-72h-TV,7008,7008,0,0,13.052395205060964,14.879199987626633,25.77390003716573,True
+reference_final_test,no_export,Final_Test,Final_Test,425.0,Rule-Based EMS,0,0,0,0,,,,True
+reference_final_test,no_export,Final_Test,Final_Test,425.0,Causal MPC,7008,7008,0,0,8.096939583228792,8.753969971439801,15.474900021217763,True
+reference_final_test,no_export,Final_Test,Final_Test,425.0,ExtraTrees-MPC-24h,7008,7008,0,0,8.908769634624594,9.456690005026758,11.458399996627122,True
+reference_final_test,no_export,Final_Test,Final_Test,425.0,Hybrid-GFS-UQ-MT-MPC-72h-TV,7008,7008,0,0,13.009925784654653,14.936334994854404,30.246499984059483,True

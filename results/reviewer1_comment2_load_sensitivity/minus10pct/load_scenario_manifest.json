@@ -1,0 +1,40 @@
+{
+  "case": "minus10pct",
+  "controllers": [
+    "Rule-Based EMS",
+    "Causal MPC",
+    "ExtraTrees-MPC-24h",
+    "Hybrid-GFS-UQ-MT-MPC-72h-TV"
+  ],
+  "experiment": "Reviewer 1 Major Comment 2: airport-load +/-10%",
+  "experiment_mechanism": "scoped wrapper around load_dataset; in-memory perturbation only",
+  "final_test_load_factor": 0.9,
+  "grid_scenarios": [
+    "base_export",
+    "limited_export",
+    "no_export"
+  ],
+  "h2_demand_kg_day": 425,
+  "historical_source_is_two_year_measured": false,
+  "master_path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\data\\input\\KotaBharu_Airport_Master_5min_2024_2025_SCRIPT_READY.xlsx",
+  "master_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "not_new_independent_weather_or_load_measurements": true,
+  "perturbed_column_in_internal_model": "load_kw",
+  "perturbed_partition": "Final_Test_Data (2025-10-20 to 2025-12-31)",
+  "simulator_path": "D:\\Salman_Official\\UKM\\Research_Work\\Paper_writing\\writing\\RLEMS_HRES_Malaysia\\RLEMS_airport_REPRO\\code\\simulation\\RLEMS_Airport_GreenH2_ECM_HybridGFS72_Publication_v1_6_5_CLEAN_RUNTIME_FIX.py",
+  "simulator_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "study_window_days": 73,
+  "supplementary_script_sha256": "b2ce094c5fb816fd2f5e367f7db2bcfc223881c9f8e8c9166d710ee4c230b2c4",
+  "timestamp_utc": "2026-11-17T14:44:42+00:00",
+  "untouched": [
+    "Training_Data",
+    "Development_Data",
+    "all weather/PV",
+    "tariffs",
+    "GFS cache",
+    "controller parameters",
+    "H2 demand",
+    "scientific source script",
+    "master workbook"
+  ]
+}

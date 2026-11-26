@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-18T02:14:21+00:00",
+  "fixed_hydrogen_demand_kg_day": 425.0,
+  "forecast_hyperparameters_and_controllers": "unaltered frozen V1.6.5",
+  "forecast_models": "trained from training partition within frozen simulator; GFS calibration on development only",
+  "frozen_core_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "gfs_anchor_cache_sha256": {
+    "gfs_development_f006_f084.csv": "7a4d33e9077b832b3d7c808ff5da7c27022214266b831cdca342e21337245dae",
+    "gfs_final_test_f006_f084.csv": "0fb6157792ccfb1251d702ceef213e784e78ee59ef6046d1dbb41859e6f3cfde"
+  },
+  "in_memory_pv_and_ghi_override": false,
+  "limitations": [
+    "Matched CAMS is sensitive to normalization-induced hourly boundary jumps.",
+    "Original CAMS changes both solar energy and time variability.",
+    "Experiment retrains forecasts and recalibrates GFS, so effect is full forecast-to-dispatch sensitivity, not just plant forcing.",
+    "CAMS estimates are not on-site 1-min field measurements."
+  ],
+  "locked_final_test": "2025-10-20 through 2025-12-31 (73 days)",
+  "model_settings": "reference mode; four controllers; three export/grid scenarios",
+  "original_master_sha256": "5f9dfc7126f72fabc43eb6f727a56e20db16e954c7f3aaf313b7fd4e713309fd",
+  "original_source_xlsx_modified": false,
+  "ready_cams_gz_sha256": "e3d531571ec403640be04eb7a7e88609411beba3bfaa506ad09357868b83011f",
+  "scenario": "NASA_BASELINE",
+  "scenario_pv_ghi_columns": null,
+  "train_development_final_test_all_scenario_consistent": true
+}

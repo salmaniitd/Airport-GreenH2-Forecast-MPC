@@ -1,0 +1,106 @@
+{
+  "cases": 12,
+  "created_utc": "2026-11-18T02:58:29+00:00",
+  "gfs_calibration_once": true,
+  "model_core_sha256": "010da483c14c0d84fe75dbb5cc24af77b7c95bf22ce8f0759a03bea1ffa6f581",
+  "tasks": [
+    {
+      "controller": "Rule-Based EMS",
+      "demand": 425.0,
+      "grid": "base_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": true
+    },
+    {
+      "controller": "Causal MPC",
+      "demand": 425.0,
+      "grid": "base_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": true
+    },
+    {
+      "controller": "ExtraTrees-MPC-24h",
+      "demand": 425.0,
+      "grid": "base_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": true
+    },
+    {
+      "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+      "demand": 425.0,
+      "grid": "base_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": true
+    },
+    {
+      "controller": "Rule-Based EMS",
+      "demand": 425.0,
+      "grid": "limited_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": false
+    },
+    {
+      "controller": "Causal MPC",
+      "demand": 425.0,
+      "grid": "limited_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": false
+    },
+    {
+      "controller": "ExtraTrees-MPC-24h",
+      "demand": 425.0,
+      "grid": "limited_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": false
+    },
+    {
+      "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+      "demand": 425.0,
+      "grid": "limited_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": true
+    },
+    {
+      "controller": "Rule-Based EMS",
+      "demand": 425.0,
+      "grid": "no_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": false
+    },
+    {
+      "controller": "Causal MPC",
+      "demand": 425.0,
+      "grid": "no_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": false
+    },
+    {
+      "controller": "ExtraTrees-MPC-24h",
+      "demand": 425.0,
+      "grid": "no_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": false
+    },
+    {
+      "controller": "Hybrid-GFS-UQ-MT-MPC-72h-TV",
+      "demand": 425.0,
+      "grid": "no_export",
+      "label": "reference_final_test",
+      "period": "Final_Test",
+      "save_dispatch": true
+    }
+  ],
+  "training_once": true,
+  "workers": 6
+}

@@ -1,0 +1,53 @@
+{
+  "calibration_partition": "Development-A / Tune only",
+  "evaluation_partition": "Development-B / Confirm only",
+  "final_test_used_for_calibration": false,
+  "controller_cost_used_for_calibration": false,
+  "weather_match_fraction": 1.0,
+  "causal_lag7_match_fraction": 1.0,
+  "match_fraction_scope": "GFS target timestamps inside Development_Data only",
+  "development_target_start_myt": "2025-05-27 00:00:00",
+  "development_target_end_myt": "2025-10-19 23:55:00",
+  "gfs_rows_in_development_target_scope": 8098,
+  "gfs_rows_outside_development_target_scope": 106,
+  "out_of_scope_rows_counted_as_alignment_failures": false,
+  "local_scale_by_gfs_lead_h": {
+    "6.0": 0.8979261142675039,
+    "12.0": 0.899899878469381,
+    "18.0": 0.8983140857401942,
+    "24.0": 0.8844265125870976,
+    "30.0": 0.9075383730941299,
+    "36.0": 0.8958750023267796,
+    "42.0": 0.9270097827835553,
+    "48.0": 0.9217206963555259,
+    "54.0": 0.9116623116526219,
+    "60.0": 0.9105840268049304,
+    "66.0": 0.9354631309148691,
+    "72.0": 0.9038398336490906,
+    "78.0": 0.9020932131869696,
+    "84.0": 0.9094824003960856
+  },
+  "operational_q90_abs_pv_error_kw_by_gfs_lead_h": {
+    "6.0": 1207.9939775962912,
+    "12.0": 1424.4826708345927,
+    "18.0": 1371.4932792606305,
+    "24.0": 1466.81132913105,
+    "30.0": 1768.6383525652946,
+    "36.0": 1709.6301770902442,
+    "42.0": 1326.6467962333681,
+    "48.0": 1420.2649793953374,
+    "54.0": 1609.9822231978778,
+    "60.0": 1572.9908861204517,
+    "66.0": 2104.5484100173107,
+    "72.0": 1634.0443325563501,
+    "78.0": 1671.0421614255956,
+    "84.0": 1873.3391471517612
+  },
+  "long_horizon_selected_beta_gfs": {
+    "24_48h": 0.6,
+    "48_72h": 0.55
+  },
+  "long_horizon_formula": "PV_lag7 + beta_segment*(PV_GFS_calibrated - PV_lag7)",
+  "accepted_v3_scales_frozen_at_h": [],
+  "coarse_training_seasonal_profile_used": false
+}
